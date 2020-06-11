@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
-  
+  <meta name="author" content="wen">
   
   
   
@@ -47,7 +47,7 @@
     "name": "My New Hugo Site",
     "author": {
         "@type": "Person",
-        "name": ""
+        "name": "wen"
     },
     "description": "",
 }
@@ -69,6 +69,14 @@
         <div class="menu navbar-right">
                 
                 
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
         </div>
     </div>
 </nav>
@@ -84,6 +92,14 @@
           <div class="menu" id="mobile-menu">
                 
                 
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
         </div>
     </div>
 </nav>
@@ -95,13 +111,28 @@
     
     
     
+    <div class="avatar">
+        <a href="/posts/"> <img src="/images/me/avatar.png"> </a>
+    </div>
+    
+    
+    <h2 class="description">
+       我会更好，因为我没有停止
+    </h2>
+    
     <div class="social-links">
       
 
 
  
 
+<a href="javascript:void(0);" target="_blank" rel="me noopener" onclick="document.getElementById('lightbox').style.display='inline';"><i class="iconfont icon-wechat"></i></a> 
 
+
+<a href="mailto:935425887@qq.com" rel="me noopener"><i class="iconfont icon-mail01"></i></a>
+
+
+<a href="https://facebook.com/profile.php?id=100014443054339" rel="me noopener"><i class="iconfont icon-facebook"></i></a>
 
 
 
@@ -114,6 +145,50 @@
  
 
 
+<style type="text/css">
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+}
+
+.center {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -110px;
+}
+
+.center img {
+    width: 220px;
+}
+
+.center i {
+    color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    float: right;
+    top: 0px;
+    right: -20px;
+    cursor: pointer;
+}
+</style>
+
+
+<div id="lightbox" style="display: none" class="lightbox" onclick="document.getElementById('lightbox').style.display='none';">
+    <div class="center">
+        <i class="iconfont icon-close"></i>
+        <img src="/images/me/wechat.png">
+    </div>
+</div>
+
+
+
   
 
           </div>
@@ -122,9 +197,13 @@
     <div class="copyright">
         &copy;
         
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://Chenwenwenwen.github.io/">wen</a> | </span> 
          
 
          
