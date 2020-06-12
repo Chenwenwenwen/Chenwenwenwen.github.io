@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-hans">
   <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="http://example.org/2020/first/" />
+  <link rel="prev" href="https://chenwenwenwen.github.io/2020/first/" />
   
-  <link rel="canonical" href="http://example.org/2020/hugo/" />
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2020/hugo/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,13 +41,13 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "http:\/\/example.org\/"
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "如何使用Hugo搭建个人博客",
     "headline" : "如何使用Hugo搭建个人博客",
     "description" : "Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。\nHugo 官方主页：https:\/\/gohugo.io\/\n如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载\n2.下载到安装包，解压后放到x:\\xxx\\hugo\n3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加\n4.重启终端，运行 hugo version 。安装成功就能查看到版本号\nStep2：创建一个新的Hugo网页 1.进入\n2.点击Quick Start ，Step1操作前面已完成，直接开始Step2\n3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)\nhugo new site quickstart\n上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart\nStep3：添加主题 这里以主题ananke为例：\ncd quickstart \/\/记得将quickstart更改为上一步的创建名 git init git submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke\n将主题添加到站点配置中：\necho \u0026lsquo;theme = \u0026ldquo;ananke\u0026rdquo;\u0026rsquo; \u0026raquo; config.toml\nStep4：新建一篇文章 posts:放置文章的文件夹\nhugo new posts\/test.md\n可以用文本文件或 Markdown 编辑器打开文件 post\/test.md ，并增加点内容。\nPS：默认创建的是草稿类型，需要将draft值改为false才能看到页面\n推送新文章 在网站的主目录下\nhexo new posts\/文章名。md hugo \u0026ndash;theme=主题名称 cd public git add -A git commit -m \u0026ldquo;描述内容\u0026rdquo; git push -u origin master",
-    "inLanguage" : "en-us",
+    "inLanguage" : "zh-hans",
     "author" : "wen",
     "creator" : "wen",
     "publisher": "wen",
@@ -56,7 +56,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-06-12 11:07:48 \u002b0800 CST",
     "dateModified" : "2020-06-12 11:07:48 \u002b0800 CST",
-    "url" : "http:\/\/example.org\/2020\/hugo\/",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2020\/hugo\/",
     "wordCount" : "154",
     "keywords" : [  "しずか"]
 }
@@ -72,7 +72,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://example.org/">しずか</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -91,7 +91,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://example.org/">しずか</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -118,7 +118,7 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">如何使用Hugo搭建个人博客</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="http://example.org/" rel="author">wen</a> with ♥ 
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
                 <span class="post-time">
                 on <time datetime=2020-06-12 itemprop="datePublished">June 12, 2020</time>
                 </span>
@@ -197,13 +197,18 @@ git push -u origin master</p>
 <p>hugo &ndash;theme=主题名 &ndash;baseUrl=&quot;https://YOURNAME.github.io/&rdquo;</p>
 <p>所有静态页面都会生成到 public 目录下，生成静态网站后并push到你的GitHub Pages 上，就能得到一个在线的个人博客了。</p>
 <p>如果一切顺利，所有静态页面都会生成到 public 目录，将 pubilc 目录里所有文件 push 到刚创建的 Repository 的 master 分支。</p>
-<p>cd public</p>
-<p>git init</p>
-<p>git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a></p>
-<p>git add -A</p>
-<p>git commit -m &ldquo;first commit&rdquo;</p>
-<p>git push -u origin master</p>
-<p>在GitHub上新建一个仓库，命名为github用户名.github.io</p>
+<pre><code>cd public 
+
+git init 
+
+git remote add origin https://github.com/coderzh/coderzh.github.io.git 
+
+git add -A 
+
+git commit -m &quot;first commit&quot; 
+
+git push -u origin master 
+</code></pre><p>在GitHub上新建一个仓库，命名为github用户名.github.io</p>
 <ol>
 <li>把public目录上传到新建的仓库中</li>
 <li>在你的git仓库里面Settings的GitHub Pages下你可以看到http://你的用户名.github.io的链接。</li>
@@ -229,7 +234,7 @@ git push -u origin master</p>
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://example.org/2020/hugo/>http://example.org/2020/hugo/</span>
+                    <a href=https://chenwenwenwen.github.io/2020/hugo/>https://chenwenwenwen.github.io/2020/hugo/</span>
             </p>
             
              
@@ -244,13 +249,13 @@ git push -u origin master</p>
         
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="http://example.org/">home</a></span>
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="http://example.org/2020/first/" class="prev" rel="prev" title="frist bolg"><i class="iconfont icon-left"></i>&nbsp;frist bolg</a>
+        <a href="https://chenwenwenwen.github.io/2020/first/" class="prev" rel="prev" title="frist bolg"><i class="iconfont icon-left"></i>&nbsp;frist bolg</a>
          
         
     </div>
@@ -273,7 +278,7 @@ git push -u origin master</p>
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="http://example.org/">wen</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
          
 
          

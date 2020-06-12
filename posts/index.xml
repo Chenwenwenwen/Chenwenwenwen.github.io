@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on しずか</title>
-    <link>http://example.org/posts/</link>
+    <link>https://chenwenwenwen.github.io/posts/</link>
     <description>Recent content in Posts on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-hans</language>
     <lastBuildDate>Fri, 12 Jun 2020 11:07:48 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenwenwenwen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>如何使用Hugo搭建个人博客</title>
-      <link>http://example.org/2020/hugo/</link>
+      <link>https://chenwenwenwen.github.io/2020/hugo/</link>
       <pubDate>Fri, 12 Jun 2020 11:07:48 +0800</pubDate>
       
-      <guid>http://example.org/2020/hugo/</guid>
+      <guid>https://chenwenwenwen.github.io/2020/hugo/</guid>
       <description>Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。
 Hugo 官方主页：https://gohugo.io/
 如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载
@@ -42,10 +42,10 @@ hexo new posts/文章名。md hugo &amp;ndash;theme=主题名称 cd public git a
     
     <item>
       <title>frist bolg</title>
-      <link>http://example.org/2020/first/</link>
+      <link>https://chenwenwenwen.github.io/2020/first/</link>
       <pubDate>Tue, 09 Jun 2020 10:44:28 +0800</pubDate>
       
-      <guid>http://example.org/2020/first/</guid>
+      <guid>https://chenwenwenwen.github.io/2020/first/</guid>
       <description>Hello test！</description>
     </item>
     
