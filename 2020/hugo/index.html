@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "如何使用Hugo搭建个人博客",
     "headline" : "如何使用Hugo搭建个人博客",
-    "description" : "Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。\nHugo 官方主页：https:\/\/gohugo.io\/\n如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载\n2.下载到安装包，解压后放到x:\\xxx\\hugo\n3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加\n4.重启终端，运行 hugo version 。安装成功就能查看到版本号\nStep2：创建一个新的Hugo网页 1.进入\n2.点击Quick Start ，Step1操作前面已完成，直接开始Step2\n3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)\nhugo new site quickstart 上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart\nStep3：添加主题 这里以主题ananke为例：\ncd quickstart \/\/记得将quickstart更改为上一步的创建名 git init git submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke 将主题添加到站点配置中：\n echo \u0027theme = \u0026quot;ananke\u0026quot;\u0027 \u0026gt;\u0026gt; config.toml Step4：新建一篇文章 posts:放置文章的文件夹\n hugo new posts\/test.md 可以用文本文件或 Markdown 编辑器打开文件 post\/test.md ，并增加点内容。\nPS：默认创建的是草稿类型，需要将draft值改为false才能看到页面\n推送新文章 在网站的主目录下\nhexo new posts\/文章名。md hugo --theme=主题名称 cd public git add -A git commit -m \u0026quot;描述内容\u0026quot; git push -u origin master Step5：开启Hugo服务器  hugo server -D 浏览至http：\/\/ localhost：1313 \/的新站点。",
+    "description" : "Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。\nHugo 官方主页：https:\/\/gohugo.io\/\n如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载\n2.下载到安装包，解压后放到x:\\xxx\\hugo\n3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加\n4.重启终端，运行 hugo version 。安装成功就能查看到版本号\nStep2：创建一个新的Hugo网页 1.进入\n2.点击Quick Start ，Step1操作前面已完成，直接开始Step2\n3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)\nhugo new site quickstart\n上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart\nStep3：添加主题 这里以主题ananke为例：\ncd quickstart \/\/记得将quickstart更改为上一步的创建名 git init git submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke\n将主题添加到站点配置中：\necho \u0026lsquo;theme = \u0026ldquo;ananke\u0026rdquo;\u0026rsquo; \u0026raquo; config.toml\nStep4：新建一篇文章 posts:放置文章的文件夹\nhugo new posts\/test.md\n可以用文本文件或 Markdown 编辑器打开文件 post\/test.md ，并增加点内容。\nPS：默认创建的是草稿类型，需要将draft值改为false才能看到页面\n推送新文章 在网站的主目录下\nhexo new posts\/文章名。md hugo \u0026ndash;theme=主题名称 cd public git add -A git commit -m \u0026ldquo;描述内容\u0026rdquo; git push -u origin master",
     "inLanguage" : "en-us",
     "author" : "wen",
     "creator" : "wen",
@@ -160,67 +160,57 @@
 <p>1.进入</p>
 <p>2.点击Quick Start ，Step1操作前面已完成，直接开始Step2</p>
 <p>3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)</p>
-<pre><code>hugo new site quickstart 
-</code></pre><p>上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart</p>
+<p>hugo new site quickstart</p>
+<p>上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart</p>
 <h3 id="step3添加主题">Step3：添加主题</h3>
 <p>这里以主题ananke为例：</p>
-<pre><code>cd quickstart //记得将quickstart更改为上一步的创建名
-
-git init 
-
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 
-</code></pre><p>将主题添加到站点配置中：</p>
-<pre><code> echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml 
-</code></pre><h3 id="step4新建一篇文章">Step4：新建一篇文章</h3>
+<p>cd quickstart //记得将quickstart更改为上一步的创建名
+git init
+git submodule add <a href="https://github.com/budparr/gohugo-theme-ananke.git">https://github.com/budparr/gohugo-theme-ananke.git</a> themes/ananke</p>
+<p>将主题添加到站点配置中：</p>
+<p>echo &lsquo;theme = &ldquo;ananke&rdquo;&rsquo; &raquo; config.toml</p>
+<h3 id="step4新建一篇文章">Step4：新建一篇文章</h3>
 <p>posts:放置文章的文件夹</p>
-<pre><code> hugo new posts/test.md 
-</code></pre><p>可以用文本文件或 Markdown 编辑器打开文件 post/test.md ，并增加点内容。</p>
+<p>hugo new posts/test.md</p>
+<p>可以用文本文件或 Markdown 编辑器打开文件 post/test.md ，并增加点内容。</p>
 <p><img src="C:%5CUsers%5Cchenwenjing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1591942864064.png" alt="1591942864064"></p>
 <p>PS：默认创建的是草稿类型，需要将draft值改为false才能看到页面</p>
 <h4 id="推送新文章">推送新文章</h4>
 <p>在网站的主目录下</p>
-<pre><code>hexo new posts/文章名。md
-hugo --theme=主题名称 
+<p>hexo new posts/文章名。md
+hugo &ndash;theme=主题名称
 cd public
 git add -A
-git commit -m &quot;描述内容&quot;
-git push -u origin master
-</code></pre><h3 id="step5开启hugo服务器">Step5：开启Hugo服务器</h3>
-<pre><code>  hugo server -D 
-</code></pre><p><strong>浏览至<a href="http://localhost:1313/">http：// localhost：1313 /的</a>新站点。</strong></p>
+git commit -m &ldquo;描述内容&rdquo;
+git push -u origin master</p>
+<h3 id="step5开启hugo服务器">Step5：开启Hugo服务器</h3>
+<p>hugo server -D</p>
+<p><strong>浏览至<a href="http://localhost:1313/">http：// localhost：1313 /的</a>新站点。</strong></p>
 <p>随意编辑或添加新内容，只需在浏览器中刷新即可快速查看更改（您可能需要在Web浏览器中强制刷新，通常使用Ctrl-R之类的功能）。</p>
 <h3 id="step6更换主题">Step6：更换主题</h3>
 <p><code>config.toml</code>在文本编辑器中打开：</p>
-<pre><code>baseURL = &quot;https://example.org/&quot; 
-
-languageCode = &quot;en-us&quot; //可换为zh-hans
-
-title = &quot;My New Hugo Site&quot; 
-
-theme = &quot;ananke&quot; //主题名
-</code></pre><h3 id="step7生成静态网站">Step7：生成静态网站</h3>
-<pre><code> hugo --theme=主题名 --baseUrl=&quot;https://YOURNAME.github.io/&quot; 
-</code></pre><p>所有静态页面都会生成到 public 目录下，生成静态网站后并push到你的GitHub Pages 上，就能得到一个在线的个人博客了。</p>
+<p>baseURL = &ldquo;<a href="https://example.org/%22">https://example.org/&quot;</a></p>
+<p>languageCode = &ldquo;en-us&rdquo; //可换为zh-hans</p>
+<p>title = &ldquo;My New Hugo Site&rdquo;</p>
+<p>theme = &ldquo;ananke&rdquo; //主题名</p>
+<h3 id="step7生成静态网站">Step7：生成静态网站</h3>
+<p>hugo &ndash;theme=主题名 &ndash;baseUrl=&quot;https://YOURNAME.github.io/&rdquo;</p>
+<p>所有静态页面都会生成到 public 目录下，生成静态网站后并push到你的GitHub Pages 上，就能得到一个在线的个人博客了。</p>
 <p>如果一切顺利，所有静态页面都会生成到 public 目录，将 pubilc 目录里所有文件 push 到刚创建的 Repository 的 master 分支。</p>
-<pre><code>cd public 
-
-git init 
-
-git remote add origin https://github.com/coderzh/coderzh.github.io.git 
-
-git add -A 
-
-git commit -m &quot;first commit&quot; 
-
-git push -u origin master 
-</code></pre><p>在GitHub上新建一个仓库，命名为github用户名.github.io</p>
+<p>cd public</p>
+<p>git init</p>
+<p>git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a></p>
+<p>git add -A</p>
+<p>git commit -m &ldquo;first commit&rdquo;</p>
+<p>git push -u origin master</p>
+<p>在GitHub上新建一个仓库，命名为github用户名.github.io</p>
 <ol>
 <li>把public目录上传到新建的仓库中</li>
 <li>在你的git仓库里面Settings的GitHub Pages下你可以看到http://你的用户名.github.io的链接。</li>
 <li>打开此链接，就能看到你的Hugo已经被挂到网上了</li>
 </ol>
 <h1 id="大功告成">大功告成</h1>
-<h5 id="还可以这样做">还可以这样做：</h5>
+<h2 id="还可以这样做">还可以这样做：</h2>
 <ol>
 <li>在你的GitHub上新建一个仓库，命名为github用户名.github.io-creator</li>
 <li>将Hugo根目录的文件上传到此仓库(注意：Hugo根目录上存储着原代码，Hugo根目录丢失，就无法写博客了)</li>
