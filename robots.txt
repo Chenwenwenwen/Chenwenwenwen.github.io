@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://Chenwenwenwen.github.io/sitemap.xml
+Sitemap: http://example.org/sitemap.xml

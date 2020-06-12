@@ -2,7 +2,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://Chenwenwenwen.github.io/about/</loc>
+      <loc>http://example.org/posts/</loc>
+      
+      <lastmod>2020-06-12T11:07:48+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://example.org/</loc>
+      
+      <lastmod>2020-06-12T11:07:48+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://example.org/2020/hugo/</loc>
+      
+      <lastmod>2020-06-12T11:07:48+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://example.org/about/</loc>
       
       <lastmod>2020-06-11T18:30:28+08:00</lastmod>
       
@@ -12,7 +42,7 @@
     </url>
   
     <url>
-      <loc>https://Chenwenwenwen.github.io/2020/first/</loc>
+      <loc>http://example.org/2020/first/</loc>
       
       <lastmod>2020-06-09T10:44:28+08:00</lastmod>
       
@@ -22,9 +52,7 @@
     </url>
   
     <url>
-      <loc>https://Chenwenwenwen.github.io/posts/</loc>
-      
-      <lastmod>2020-06-09T10:44:28+08:00</lastmod>
+      <loc>http://example.org/categories/</loc>
       
       
       
@@ -32,25 +60,7 @@
     </url>
   
     <url>
-      <loc>https://Chenwenwenwen.github.io/</loc>
-      
-      <lastmod>2020-06-09T10:44:28+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://Chenwenwenwen.github.io/categories/</loc>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://Chenwenwenwen.github.io/tags/</loc>
+      <loc>http://example.org/tags/</loc>
       
       
       

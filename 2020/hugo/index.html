@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="http://example.org/2020/first/" />
+  
+  <link rel="canonical" href="http://example.org/2020/hugo/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           如何使用Hugo搭建个人博客 | しずか
+       
+  </title>
+  <meta name="title" content="如何使用Hugo搭建个人博客 | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/example.org\/"
+    },
+    "articleSection" : "posts",
+    "name" : "如何使用Hugo搭建个人博客",
+    "headline" : "如何使用Hugo搭建个人博客",
+    "description" : "Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。\nHugo 官方主页：https:\/\/gohugo.io\/\n如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载\n2.下载到安装包，解压后放到x:\\xxx\\hugo\n3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加\n4.重启终端，运行 hugo version 。安装成功就能查看到版本号\nStep2：创建一个新的Hugo网页 1.进入\n2.点击Quick Start ，Step1操作前面已完成，直接开始Step2\n3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)\nhugo new site quickstart 上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart\nStep3：添加主题 这里以主题ananke为例：\ncd quickstart \/\/记得将quickstart更改为上一步的创建名 git init git submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke 将主题添加到站点配置中：\n echo \u0027theme = \u0026quot;ananke\u0026quot;\u0027 \u0026gt;\u0026gt; config.toml Step4：新建一篇文章 posts:放置文章的文件夹\n hugo new posts\/test.md 可以用文本文件或 Markdown 编辑器打开文件 post\/test.md ，并增加点内容。\nPS：默认创建的是草稿类型，需要将draft值改为false才能看到页面\n推送新文章 在网站的主目录下\nhexo new posts\/文章名。md hugo --theme=主题名称 cd public git add -A git commit -m \u0026quot;描述内容\u0026quot; git push -u origin master Step5：开启Hugo服务器  hugo server -D 浏览至http：\/\/ localhost：1313 \/的新站点。",
+    "inLanguage" : "en-us",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-06-12 11:07:48 \u002b0800 CST",
+    "dateModified" : "2020-06-12 11:07:48 \u002b0800 CST",
+    "url" : "http:\/\/example.org\/2020\/hugo\/",
+    "wordCount" : "154",
+    "keywords" : [  "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://example.org/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://example.org/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">如何使用Hugo搭建个人博客</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://example.org/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-06-12 itemprop="datePublished">June 12, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="hugo是什么">Hugo是什么？</h1>
+<p>Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。</p>
+<p>Hugo 官方主页：https://gohugo.io/</p>
+<h1 id="如何使用hugo搭建个人博客">如何使用Hugo搭建个人博客</h1>
+<h3 id="step1安装hugo">Step1：安装Hugo</h3>
+<p>1.下载</p>
+<p><img src="C:%5CUsers%5Cchenwenjing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1591931792129.png" alt="1591931792129"></p>
+<p>2.下载到安装包，解压后放到x:\xxx\hugo</p>
+<p>3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加</p>
+<p><img src="C:%5CUsers%5Cchenwenjing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1591941569064.png" alt="1591941569064"></p>
+<p>4.重启终端，运行 <code>hugo version</code> 。安装成功就能查看到版本号</p>
+<p><img src="C:%5CUsers%5Cchenwenjing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1591941663996.png" alt="1591941663996"></p>
+<h3 id="step2创建一个新的hugo网页">Step2：创建一个新的Hugo网页</h3>
+<p>1.进入</p>
+<p>2.点击Quick Start ，Step1操作前面已完成，直接开始Step2</p>
+<p>3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)</p>
+<pre><code>hugo new site quickstart 
+</code></pre><p>上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart</p>
+<h3 id="step3添加主题">Step3：添加主题</h3>
+<p>这里以主题ananke为例：</p>
+<pre><code>cd quickstart //记得将quickstart更改为上一步的创建名
+
+git init 
+
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 
+</code></pre><p>将主题添加到站点配置中：</p>
+<pre><code> echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml 
+</code></pre><h3 id="step4新建一篇文章">Step4：新建一篇文章</h3>
+<p>posts:放置文章的文件夹</p>
+<pre><code> hugo new posts/test.md 
+</code></pre><p>可以用文本文件或 Markdown 编辑器打开文件 post/test.md ，并增加点内容。</p>
+<p><img src="C:%5CUsers%5Cchenwenjing%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1591942864064.png" alt="1591942864064"></p>
+<p>PS：默认创建的是草稿类型，需要将draft值改为false才能看到页面</p>
+<h4 id="推送新文章">推送新文章</h4>
+<p>在网站的主目录下</p>
+<pre><code>hexo new posts/文章名。md
+hugo --theme=主题名称 
+cd public
+git add -A
+git commit -m &quot;描述内容&quot;
+git push -u origin master
+</code></pre><h3 id="step5开启hugo服务器">Step5：开启Hugo服务器</h3>
+<pre><code>  hugo server -D 
+</code></pre><p><strong>浏览至<a href="http://localhost:1313/">http：// localhost：1313 /的</a>新站点。</strong></p>
+<p>随意编辑或添加新内容，只需在浏览器中刷新即可快速查看更改（您可能需要在Web浏览器中强制刷新，通常使用Ctrl-R之类的功能）。</p>
+<h3 id="step6更换主题">Step6：更换主题</h3>
+<p><code>config.toml</code>在文本编辑器中打开：</p>
+<pre><code>baseURL = &quot;https://example.org/&quot; 
+
+languageCode = &quot;en-us&quot; //可换为zh-hans
+
+title = &quot;My New Hugo Site&quot; 
+
+theme = &quot;ananke&quot; //主题名
+</code></pre><h3 id="step7生成静态网站">Step7：生成静态网站</h3>
+<pre><code> hugo --theme=主题名 --baseUrl=&quot;https://YOURNAME.github.io/&quot; 
+</code></pre><p>所有静态页面都会生成到 public 目录下，生成静态网站后并push到你的GitHub Pages 上，就能得到一个在线的个人博客了。</p>
+<p>如果一切顺利，所有静态页面都会生成到 public 目录，将 pubilc 目录里所有文件 push 到刚创建的 Repository 的 master 分支。</p>
+<pre><code>cd public 
+
+git init 
+
+git remote add origin https://github.com/coderzh/coderzh.github.io.git 
+
+git add -A 
+
+git commit -m &quot;first commit&quot; 
+
+git push -u origin master 
+</code></pre><p>在GitHub上新建一个仓库，命名为github用户名.github.io</p>
+<ol>
+<li>把public目录上传到新建的仓库中</li>
+<li>在你的git仓库里面Settings的GitHub Pages下你可以看到http://你的用户名.github.io的链接。</li>
+<li>打开此链接，就能看到你的Hugo已经被挂到网上了</li>
+</ol>
+<h1 id="大功告成">大功告成</h1>
+<h5 id="还可以这样做">还可以这样做：</h5>
+<ol>
+<li>在你的GitHub上新建一个仓库，命名为github用户名.github.io-creator</li>
+<li>将Hugo根目录的文件上传到此仓库(注意：Hugo根目录上存储着原代码，Hugo根目录丢失，就无法写博客了)</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://example.org/2020/hugo/>http://example.org/2020/hugo/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://example.org/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://example.org/2020/first/" class="prev" rel="prev" title="frist bolg"><i class="iconfont icon-left"></i>&nbsp;frist bolg</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://example.org/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
