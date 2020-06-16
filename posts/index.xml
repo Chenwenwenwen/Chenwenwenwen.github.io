@@ -6,10 +6,27 @@
     <description>Recent content in Posts on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Fri, 12 Jun 2020 11:07:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 14:07:01 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用nvm管理多版本Node</title>
+      <link>https://chenwenwenwen.github.io/2020/nvm/</link>
+      <pubDate>Tue, 16 Jun 2020 14:07:01 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/nvm/</guid>
+      <description>一、下载nvm github上下载nvm最新版本  nvm-noinstall.zip 是绿色免安装版本，但是使用之前需要配置（推荐） nvm-setup.zip： 这是一个安装包，下载之后点击安装，无需配置就可以使用，很方便  二、安装nvm   nvm-noinstall.zip 下载完成解压在C:\dev\nvm。里面的文件列表如下
+  双击install.cmd，直接回车，生成目录settings.txt文件。把这个文件剪切到C:\dev\nvm目录中。
+（不存在则新建，新建后的txt文件不要修改其文件编码,使用默认的ANSI格式，否则无法正确解析配置文件中的内容 ）
+root: C:\dev\nvm （根据自己情况配置） root:后面一定要有一个空格 path: C:\dev\nodejs （根据自己情况配置）path:后面一定要有一个空格 arch: 64 proxy: none node_mirror: http://npm.taobao.org/mirrors/node/ npm_mirror: https://npm.taobao.org/mirrors/npm/ ​ 注意: root:和path: 后面一定要有一个空格否则在安装node的时候不会安装到nvm文件夹下
+  配置环境变量
+window+r 输入sysdm.cpl 快捷方式打开系统属性面板，在高级里面找到环境变量，或者在我的电脑右击属性——》高级系统设置——》高级-——》环境变量
+NVM_HOME：nvm.exe 所在目录&amp;lt;==&amp;gt; setting**s**.txt中的root值 NVM_SYMLINK：node 快捷方式所在的目录 &amp;lt;==&amp;gt; setting**s**.txt中的root值 PATH中添加%NVM_HOME% 和**;**%NVM_SYMLINK% 验证：打开CMD通过set NVM_HOME和 set NVM_SYMLINK 命令查看环境变量是否配置成功
+成功则显示如下：
+  在cmd输入nvm 查看nvm详细信息，如果出现详细信息，所以已经安装成功，但是在window10 可能会出现 ‘nvm’ 不是内部或外部命令，也不是可运行的程序或批处理文件。这是cmd的问题，我们可以打开window+r输入powershell打开powershell，powershell可以看作是cmd 的升级版   切换node 版本 nvm list查看版本 nvm use 版本号 （切换到node 版本） node -v 查看版本 （确认安装成功） 在vsCode允许node 环境 1.</description>
+    </item>
     
     <item>
       <title>如何使用Hugo搭建个人博客</title>
@@ -18,7 +35,7 @@
       
       <guid>https://chenwenwenwen.github.io/2020/hugo/</guid>
       <description>Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。
-Hugo 官方主页：https://gohugo.io/
+Hugo 官方主页
 如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载Hugo安装
 2.下载到安装包，解压后放到x:\xxx\hugo
 3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加
@@ -33,7 +50,7 @@ echo &amp;#39;theme = &amp;#34;ananke&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 hugo new posts/test.md 可以用文本文件或 Markdown 编辑器打开文件 post/test.md ，并增加点内容。
 PS：默认创建的是草稿类型，需要将draft值改为false才能看到页面
 推送新文章 在网站的主目录下
-hexo new posts/文章名。md hugo --theme=主题名称 cd public git add -A git commit -m &amp;#34;描述内容&amp;#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：// localhost：1313 /的新站点。</description>
+hexo new posts/文章名.md hugo --theme=主题名称 cd public git add -A git commit -m &amp;#34;描述内容&amp;#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：// localhost：1313 /的新站点。</description>
     </item>
     
     <item>

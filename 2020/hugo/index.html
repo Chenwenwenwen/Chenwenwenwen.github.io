@@ -10,7 +10,7 @@
   
   
   <link rel="prev" href="https://chenwenwenwen.github.io/2020/first/" />
-  
+  <link rel="next" href="https://chenwenwenwen.github.io/2020/nvm/" />
   <link rel="canonical" href="https://chenwenwenwen.github.io/2020/hugo/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "如何使用Hugo搭建个人博客",
     "headline" : "如何使用Hugo搭建个人博客",
-    "description" : "Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。\nHugo 官方主页：https:\/\/gohugo.io\/\n如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载Hugo安装\n2.下载到安装包，解压后放到x:\\xxx\\hugo\n3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加\n4.重启终端，运行 hugo version 。安装成功就能查看到版本号\nStep2：创建一个新的Hugo网页 1.进入Hugo官网\n2.点击Quick Start ，Step1操作前面已完成，直接开始Step2\n3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)\nhugo new site quickstart 上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart\nStep3：添加主题 这里以主题ananke为例：\ncd quickstart \/\/记得将quickstart更改为上一步的创建名 git init git submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke 将主题添加到站点配置中：\necho \u0026#39;theme = \u0026#34;ananke\u0026#34;\u0026#39; \u0026gt;\u0026gt; config.toml Step4：新建一篇文章 posts:放置文章的文件夹\nhugo new posts\/test.md 可以用文本文件或 Markdown 编辑器打开文件 post\/test.md ，并增加点内容。\nPS：默认创建的是草稿类型，需要将draft值改为false才能看到页面\n推送新文章 在网站的主目录下\nhexo new posts\/文章名。md hugo --theme=主题名称 cd public git add -A git commit -m \u0026#34;描述内容\u0026#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：\/\/ localhost：1313 \/的新站点。",
+    "description" : "Hugo是什么？ Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。\nHugo 官方主页\n如何使用Hugo搭建个人博客 Step1：安装Hugo 1.下载Hugo安装\n2.下载到安装包，解压后放到x:\\xxx\\hugo\n3.添加环境变量：点击计算机图标-右键-属性-高级系统设置-系统变量-path-添加\n4.重启终端，运行 hugo version 。安装成功就能查看到版本号\nStep2：创建一个新的Hugo网页 1.进入Hugo官网\n2.点击Quick Start ，Step1操作前面已完成，直接开始Step2\n3.复制Step2的代码，在cmd上运行。注意这里要把”quickstart“改成“github用户名.github.io-creater!”(这样操作的好处是，上传到GitHub上后方便标识。)\nhugo new site quickstart 上面的代码将在名为的文件夹中创建一个新的Hugo网站 quickstart\nStep3：添加主题 这里以主题ananke为例：\ncd quickstart \/\/记得将quickstart更改为上一步的创建名 git init git submodule add https:\/\/github.com\/budparr\/gohugo-theme-ananke.git themes\/ananke 将主题添加到站点配置中：\necho \u0026#39;theme = \u0026#34;ananke\u0026#34;\u0026#39; \u0026gt;\u0026gt; config.toml Step4：新建一篇文章 posts:放置文章的文件夹\nhugo new posts\/test.md 可以用文本文件或 Markdown 编辑器打开文件 post\/test.md ，并增加点内容。\nPS：默认创建的是草稿类型，需要将draft值改为false才能看到页面\n推送新文章 在网站的主目录下\nhexo new posts\/文章名.md hugo --theme=主题名称 cd public git add -A git commit -m \u0026#34;描述内容\u0026#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：\/\/ localhost：1313 \/的新站点。",
     "inLanguage" : "zh-hans",
     "author" : "wen",
     "creator" : "wen",
@@ -146,7 +146,7 @@
 
           <h1 id="hugo是什么">Hugo是什么？</h1>
 <p>Hugo是一个用Go语言编写的静态网站生成器，Hugo一般只需要几秒钟就能生成一个网站（每页少于1毫秒），被称为”世界上最快的网站构建框架“，是最热门的静态网站生成器之一，被广泛采用。</p>
-<p>Hugo 官方主页：https://gohugo.io/</p>
+<p><a href="https://gohugo.io/">Hugo 官方主页</a></p>
 <h1 id="如何使用hugo搭建个人博客">如何使用Hugo搭建个人博客</h1>
 <h3 id="step1安装hugo">Step1：安装Hugo</h3>
 <p>1.下载<a href="https://github.com/gohugoio/hugo/releases">Hugo安装</a></p>
@@ -177,7 +177,7 @@ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/anan
 <p>PS：默认创建的是草稿类型，需要将draft值改为false才能看到页面</p>
 <h4 id="推送新文章">推送新文章</h4>
 <p>在网站的主目录下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hexo new posts/文章名。md
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">hexo new posts/文章名.md
 hugo --theme=主题名称 
 cd public
 git add -A
@@ -252,6 +252,8 @@ git push -u origin master
         
         <a href="https://chenwenwenwen.github.io/2020/first/" class="prev" rel="prev" title="frist bolg"><i class="iconfont icon-left"></i>&nbsp;frist bolg</a>
          
+        
+        <a href="https://chenwenwenwen.github.io/2020/nvm/" class="next" rel="next" title="使用nvm管理多版本Node">使用nvm管理多版本Node&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
