@@ -6,10 +6,24 @@
     <description>Recent content in Posts on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Tue, 16 Jun 2020 14:07:01 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 10:51:03 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在非系统盘安装 WSL</title>
+      <link>https://chenwenwenwen.github.io/2020/wsl/</link>
+      <pubDate>Thu, 18 Jun 2020 10:51:03 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/wsl/</guid>
+      <description>在非系统盘安装 WSL 首先在系统中配置
+ windows设置 &amp;ndash; 系统 &amp;ndash; 储存 &amp;ndash; 更改新内容的保存位置 &amp;ndash; 新的应用将保持到：非系统盘  然后以管理员身份运行 Windows PowerShell ， 推荐安装 Windows Terminal (Preview) 更加美观
+#启动虚拟机平台 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform #启用Linux子系统 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux #创建目录 New-Item D:\WSL -ItemType Directory Set-Location D:\WSL #下载安装程序，这个过程比较慢，要多等一段时间 //直接下载安装包更快 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing Rename-Item .\Ubuntu.appx Ubuntu1604.zip Expand-Archive .\Ubuntu1804.zip -Verbose #运行程序 cd Ubuntu1804 .\ubuntu1804.exe 检查是否有打开一下Windows功能
+按照上面的步骤完成，就可以轻松吃上 WSL 了 ，不过如果安装过程出错呢？看看下面如何重装吧
+如何重装   直接把 WSL 整个目录删除
+  通过 wslconfig /l 查看版本</description>
+    </item>
     
     <item>
       <title>使用nvm管理多版本Node</title>
