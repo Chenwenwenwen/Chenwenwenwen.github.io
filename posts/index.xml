@@ -38,7 +38,7 @@ Step1 配置Valine 在 config.toml 中加入以下代码（Valine基本配置）
 业务逻辑层（领域层）：加载、编译执行index.php，发送HTML文件
 数据访问层（存储层）：执行SQL语句，返回数据
 三层架构是一种线性关系。
-三、Sql 注入漏洞详解 3.1Sql注入产生的原因及威胁 刚刚讲过当我们访问动态网页时, Web 服务器会向数据访问层发起 Sql 查询请求，如果权限验证通过就会执行 Sql 语句。 这种网站内部直接发送的Sql请求一般不会有危险，但实际情况是很多时候需要结合用户的输入数据动态构造 Sql 语句，如果用户输入的数据被构造成恶意 Sql 代码，Web 应用又未对动态构造的 Sql 语句使用的参数进行审查，则会带来意想不到的危险。
+三、Sql 注入漏洞详解 Sql注入产生的原因及威胁 刚刚讲过当我们访问动态网页时, Web 服务器会向数据访问层发起 Sql 查询请求，如果权限验证通过就会执行 Sql 语句。 这种网站内部直接发送的Sql请求一般不会有危险，但实际情况是很多时候需要结合用户的输入数据动态构造 Sql 语句，如果用户输入的数据被构造成恶意 Sql 代码，Web 应用又未对动态构造的 Sql 语句使用的参数进行审查，则会带来意想不到的危险。
 Sql 注入带来的威胁主要有如下几点
  猜解后台数据库，这是利用最多的方式，盗取网站的敏感信息。 绕过认证，列如绕过验证登录网站后台。 注入可以借助数据库的存储过程进行提权等操作  查看具体实例
 四、判断Sql注入点 通常情况下，可能存在 Sql 注入漏洞的 Url 是类似这种形式 ：http://xxx.xxx.xxx/abcd.php?id=XX 对 Sql 注入的判断，主要有两个方面：
@@ -100,15 +100,6 @@ hugo new posts/test.md 可以用文本文件或 Markdown 编辑器打开文件 p
 PS：默认创建的是草稿类型，需要将draft值改为false才能看到页面
 推送新文章 在网站的主目录下
 hexo new posts/文章名.md hugo --theme=主题名称 cd public git add -A git commit -m &amp;#34;描述内容&amp;#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：// localhost：1313 /的新站点。</description>
-    </item>
-    
-    <item>
-      <title>frist bolg</title>
-      <link>https://chenwenwenwen.github.io/2020/first/</link>
-      <pubDate>Tue, 09 Jun 2020 10:44:28 +0800</pubDate>
-      
-      <guid>https://chenwenwenwen.github.io/2020/first/</guid>
-      <description>Hello test！</description>
     </item>
     
   </channel>
