@@ -22,10 +22,10 @@
   <title>
        
        
-           Sql注入 | しずか
+           Sql注入基础原理 | しずか
        
   </title>
-  <meta name="title" content="Sql注入 | しずか">
+  <meta name="title" content="Sql注入基础原理 | しずか">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,8 +44,8 @@
          "@id": "https:\/\/chenwenwenwen.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "Sql注入",
-    "headline" : "Sql注入",
+    "name" : "Sql注入基础原理",
+    "headline" : "Sql注入基础原理",
     "description" : "一、Sql注入简介 ​\tSql注入攻击是通过恶意的Sql查询或者添加语句插入到应用的输入参数中，再在后台Sql服务器上解析执行进行的攻击。\n二、Web程序三层架构 三层架构：界面层、业务逻辑层、数据访问层\n区分层次目的：高内聚低耦合的思想\n由数据库驱动的Web应用程序依从三层架构的思想也分为了三层：\n表示层：访问http:\/\/www.xxxx.com，呈现HTML内容\n业务逻辑层（领域层）：加载、编译执行index.php，发送HTML文件\n数据访问层（存储层）：执行SQL语句，返回数据\n三层架构是一种线性关系。\n三、Sql 注入漏洞详解 3.1Sql注入产生的原因及威胁 刚刚讲过当我们访问动态网页时, Web 服务器会向数据访问层发起 Sql 查询请求，如果权限验证通过就会执行 Sql 语句。 这种网站内部直接发送的Sql请求一般不会有危险，但实际情况是很多时候需要结合用户的输入数据动态构造 Sql 语句，如果用户输入的数据被构造成恶意 Sql 代码，Web 应用又未对动态构造的 Sql 语句使用的参数进行审查，则会带来意想不到的危险。\nSql 注入带来的威胁主要有如下几点\n 猜解后台数据库，这是利用最多的方式，盗取网站的敏感信息。 绕过认证，列如绕过验证登录网站后台。 注入可以借助数据库的存储过程进行提权等操作  查看具体实例\n四、判断Sql注入点 通常情况下，可能存在 Sql 注入漏洞的 Url 是类似这种形式 ：http:\/\/xxx.xxx.xxx\/abcd.php?id=XX 对 Sql 注入的判断，主要有两个方面：\n 判断该带参数的 Url 是否存在 Sql 注入？ 如果存在 Sql 注入，那么属于哪种 Sql 注入？  可能存在 Sql 注入攻击的 ASP\/PHP\/JSP 动态网页中，一个动态网页中可能只有一个参数，有时可能有多个参数。有时是整型参数，有时是字符串型参数，不能一概而论。总之只要是带有参数的 动态网页且此网页访问了数据库，那么就有可能存在 Sql 注入。如果程序员没有足够的安全意识，没有进行必要的字符过滤，存在SQL注入的可能性就非常大。\n4.1 判断是否存在Sql注入漏洞 经典：单引号判断法",
     "inLanguage" : "zh-hans",
     "author" : "wen",
@@ -116,7 +116,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Sql注入</h1>
+        <h1 class="post-title" itemprop="name headline">Sql注入基础原理</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
                 <span class="post-time">
