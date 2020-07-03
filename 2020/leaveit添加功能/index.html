@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="https://chenwenwenwen.github.io/2020/sql%E6%B3%A8%E5%85%A5/" />
+  
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           LeaveIt主题功能优化 | しずか
+       
+  </title>
+  <meta name="title" content="LeaveIt主题功能优化 | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "LeaveIt主题功能优化",
+    "headline" : "LeaveIt主题功能优化",
+    "description" : "一、评论系统 准备工作 LeaveIt主题没有提供评论的功能，因此需要自己写，这里我用的是 Valine 第三方评论系统。必须先注册和创建应用，选着开发版就好。\n快速开始 | Valine\n应用创建完后，可以去设置里应用KEY看到 APPID、APPKEY 。\nStep1 配置Valine 在 config.toml 中加入以下代码（Valine基本配置）\n# Valine. # You can get your appid and appkey from https:\/\/leancloud.cn # more info please open https:\/\/valine.js.org [params.valine] enable = true appId = \u0026#39;XXXXXXXXXXXXXXXXXXXXXXXXXXX\u0026#39; appKey = \u0026#39;XXXXXXXXXXXXXXXXXXXXXXXXXXX\u0026#39; notify = false # mail notifier , https:\/\/github.com\/xCss\/Valine\/wiki verify = false # Verification code avatar = \u0026#39;mm\u0026#39; placeholder = \u0026#39;说点什么吧...\u0026#39; visitor = trueappId和appKey换成自己的，详细的配置信息请阅读 配置项 | Valine",
+    "inLanguage" : "zh-hans",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-03 16:28:52 \u002b0800 CST",
+    "dateModified" : "2020-07-03 16:28:52 \u002b0800 CST",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2020\/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD\/",
+    "wordCount" : "265",
+    "keywords" : [  "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">LeaveIt主题功能优化</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-03 itemprop="datePublished">July 3, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://chenwenwenwen.github.io/categories/">  </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="一评论系统">一、评论系统</h1>
+<h3 id="准备工作">准备工作</h3>
+<p>LeaveIt主题没有提供评论的功能，因此需要自己写，这里我用的是 <a href="https://valine.js.org/">Valine</a> 第三方评论系统。必须先注册和创建应用，选着<strong>开发版</strong>就好。</p>
+<p><a href="https://valine.js.org/quickstart.html">快速开始 | Valine</a></p>
+<p>应用创建完后，可以去设置里应用KEY看到 APPID、APPKEY 。</p>
+<h2 id="step1-配置valine">Step1 配置Valine</h2>
+<p>在 <code>config.toml</code> 中加入以下代码（Valine基本配置）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"> # Valine.<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> # You can get your appid and appkey from https://leancloud.cn<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> # more info please open https://valine.js.org<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> [params.valine]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> enable = true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> appId = &#39;XXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> appKey = &#39;XXXXXXXXXXXXXXXXXXXXXXXXXXX&#39;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> notify = false  # mail notifier , https://github.com/xCss/Valine/wiki<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> verify = false # Verification code<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> avatar = &#39;mm&#39;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> placeholder = &#39;说点什么吧...&#39;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> visitor = true<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>appId和appKey换成自己的，详细的配置信息请阅读 <a href="https://valine.js.org/configuration.html">配置项 | Valine</a></p>
+<h2 id="step2-配置comments">Step2 配置comments</h2>
+<p>在<code>themes</code>目录下的 <code>layouts/partials/</code> 中创建 <code>comments.html</code> 文件 ，内容如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"><span style="color:#f92672">&lt;!-- valine --&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>{{- if .Site.Params.valine.enable -}}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;!-- id 将作为查询条件 --&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;div id=&#34;vcomments&#34;&gt;&lt;/div&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;script src=&#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&#34;&gt;&lt;/script&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;script src=&#39;//unpkg.com/valine/dist/Valine.min.js&#39;&gt;&lt;/script&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;script type=&#34;text/javascript&#34;&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  new Valine({<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      el: &#39;#vcomments&#39; ,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      appId: &#39;{{ .Site.Params.valine.appId }}&#39;,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      appKey: &#39;{{ .Site.Params.valine.appKey }}&#39;,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      notify: &#39;{{ .Site.Params.valine.notify }}&#39;, <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      verify: &#39;{{ .Site.Params.valine.verify }}&#39;, <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      avatar:&#39;{{ .Site.Params.valine.avatar }}&#39;, <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      placeholder: &#39;{{ .Site.Params.valine.placeholder }}&#39;,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      visitor: &#39;{{ .Site.Params.valine.visitor }}&#39;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  });<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;/script&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>{{- end }}<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h2 id="step3-引入comments">Step3 引入comments</h2>
+<p>在<code>themes</code>目录下的 <code>layouts/_default/single.html</code> 中加入下面的代码，以引入 <code>comments.html</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;div class=&#34;post-comment&#34;&gt;
+    &lt;!-- 加入评论功能 --&gt;
+    {{ partial &#34;comments.html&#34; . }}
+&lt;/div&gt;
+</code></pre></div><h1 id="二文章流量统计">二、文章流量统计</h1>
+<p>1.在<code>themes</code>目录下的<code>layouts</code>下的<code>partials</code>下的<code>head.html</code>中引入不蒜子js文件，代码为</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&lt;!-- 不蒜子 --&gt;
+&lt;script async src=&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;&gt;&lt;/script&gt;
+</code></pre></div><p>2.在页面添加统计代码</p>
+<p>找到<code>themes</code>目录下的<code>layouts</code>下的<code>partials</code>下的<code>footer.html</code>,添加以下代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"><span style="color:#f92672">&lt;span id=&#34;busuanzi_container_site_pv&#34;&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    本站访问量：&lt;span id=&#34;busuanzi_value_site_pv&#34;&gt;&lt;/span&gt;次<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;/span&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>&amp;nbsp;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;span id=&#34;busuanzi_container_site_uv&#34;&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    您是本站第 &lt;span id=&#34;busuanzi_value_site_uv&#34;&gt;&lt;/span&gt; 位访问者<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#f92672">&lt;/span&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>3.找到<code>themes</code>目录下的<code>layouts</code>下的<code>_default</code>下的<code>single.html</code>,添加以下代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"><span style="color:#f92672">&lt;h5 id=&#34;wc&#34; style=&#34;font-size: 1rem;text-align: center;&#34;&gt;</span>{{ .FuzzyWordCount }} Words|Read in about {{ .ReadingTime }} Min|本文总阅读量&lt;span id=&#34;busuanzi_value_page_pv&#34;&gt;&lt;/span&gt;次&lt;/h5&gt;<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>添加的内容和位置根据个人喜好选择</p>
+<h1 id="三修改高亮">三、修改高亮</h1>
+<p>参考了<a href="https://blog.hgtweb.com/2019/code-csdn/">大佬的文章</a></p>
+<p>修改 <code>assts/css/_page/post.scss</code> 中 <code>code:not([class])</code> 的样式代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">/* 原来的样式 */</span>
+<span style="color:#75715e">// code:not([class]) {
+</span><span style="color:#75715e">//     padding: 5px 5px;
+</span><span style="color:#75715e">//     background: #fff;
+</span><span style="color:#75715e">//     border: 1px solid #ddd;
+</span><span style="color:#75715e">//     box-shadow: 1px 1px 0 #fff, 2px 2px 0 #ddd;
+</span><span style="color:#75715e">//     margin-left: 3px;
+</span><span style="color:#75715e">//     margin-right: 3px;
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//     .dark-theme &amp;:not([class]) {
+</span><span style="color:#75715e">//         background: transparent;
+</span><span style="color:#75715e">//         box-shadow: 1px 1px 0 $dark-font-secondary-color, 2px 2px 0 $dark-font-secondary-color;
+</span><span style="color:#75715e">//     }
+</span><span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/* 修改成自己想要的样式 */</span>
+<span style="color:#f92672">code</span><span style="color:#a6e22e">:not</span><span style="color:#f92672">([</span><span style="color:#f92672">class</span><span style="color:#f92672">])</span> {
+    <span style="color:#f92672">padding</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">2px</span> <span style="color:#f92672">4px</span>;
+    <span style="color:#f92672">background</span><span style="color:#a6e22e">:</span> #f9f2f4;
+    <span style="color:#f92672">color</span><span style="color:#a6e22e">:</span> #ef3982;
+    <span style="color:#f92672">border-radius</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">2px</span>;
+    <span style="color:#f92672">margin-left</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">3px</span>;
+    <span style="color:#f92672">margin-right</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">3px</span>;
+    
+    <span style="color:#a6e22e">.dark-theme</span> <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:not</span><span style="color:#f92672">([</span><span style="color:#f92672">class</span><span style="color:#f92672">])</span> {
+       <span style="color:#f92672">background</span><span style="color:#a6e22e">:</span> #2d2d2d;
+       <span style="color:#f92672">color</span><span style="color:#a6e22e">:</span> #e06c75;
+    }
+}
+</code></pre></div>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/>https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</span>
+            </p>
+            
+            
+
+            <h5 id="wc" class="copyright-item">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://chenwenwenwen.github.io/2020/sql%E6%B3%A8%E5%85%A5/" class="prev" rel="prev" title="Sql注入基础原理"><i class="iconfont icon-left"></i>&nbsp;Sql注入基础原理</a>
+         
+        
+    </div>
+    <br/>
+    <div class="post-comment">
+          
+
+             
+            
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'OvTg5G1h4Qi5YFdoxMN1AKdx-gzGzoHsz',
+      appKey: 'nKsq2pVzlTJ5WENA4egcakKD',
+      notify: 'false', 
+      verify: 'false', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

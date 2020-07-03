@@ -6,10 +6,23 @@
     <description>Recent content in Posts on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Fri, 03 Jul 2020 10:27:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 16:28:52 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeaveIt主题功能优化</title>
+      <link>https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 03 Jul 2020 16:28:52 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/</guid>
+      <description>一、评论系统 准备工作 LeaveIt主题没有提供评论的功能，因此需要自己写，这里我用的是 Valine 第三方评论系统。必须先注册和创建应用，选着开发版就好。
+快速开始 | Valine
+应用创建完后，可以去设置里应用KEY看到 APPID、APPKEY 。
+Step1 配置Valine 在 config.toml 中加入以下代码（Valine基本配置）
+# Valine. # You can get your appid and appkey from https://leancloud.cn # more info please open https://valine.js.org [params.valine] enable = true appId = &amp;#39;XXXXXXXXXXXXXXXXXXXXXXXXXXX&amp;#39; appKey = &amp;#39;XXXXXXXXXXXXXXXXXXXXXXXXXXX&amp;#39; notify = false # mail notifier , https://github.com/xCss/Valine/wiki verify = false # Verification code avatar = &amp;#39;mm&amp;#39; placeholder = &amp;#39;说点什么吧...&amp;#39; visitor = trueappId和appKey换成自己的，详细的配置信息请阅读 配置项 | Valine</description>
+    </item>
     
     <item>
       <title>Sql注入基础原理</title>
