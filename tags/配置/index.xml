@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置 on しずか</title>
+    <link>https://chenwenwenwen.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 配置 on しずか</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 18 Jun 2020 10:51:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://chenwenwenwen.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在非系统盘安装 WSL</title>
+      <link>https://chenwenwenwen.github.io/2020/wsl/</link>
+      <pubDate>Thu, 18 Jun 2020 10:51:03 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/wsl/</guid>
+      <description>在非系统盘安装 WSL 首先在系统中配置
+ windows设置 &amp;ndash; 系统 &amp;ndash; 储存 &amp;ndash; 更改新内容的保存位置 &amp;ndash; 新的应用将保持到：非系统盘  然后以管理员身份运行 Windows PowerShell ， 推荐安装 Windows Terminal (Preview) 更加美观
+#启动虚拟机平台 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform #启用Linux子系统 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux #创建目录 New-Item D:\WSL -ItemType Directory Set-Location D:\WSL #下载安装程序，这个过程比较慢，要多等一段时间 //直接下载安装包更快 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing Rename-Item .\Ubuntu.appx Ubuntu1604.zip Expand-Archive .\Ubuntu1804.zip -Verbose #运行程序 cd Ubuntu1804 .\ubuntu1804.exe 检查是否有打开一下Windows功能
+按照上面的步骤完成，就可以轻松吃上 WSL 了 ，不过如果安装过程出错呢？看看下面如何重装吧
+如何重装   直接把 WSL 整个目录删除
+  通过 wslconfig /l 查看版本</description>
+    </item>
+    
+    <item>
+      <title>使用nvm管理多版本Node</title>
+      <link>https://chenwenwenwen.github.io/2020/nvm/</link>
+      <pubDate>Tue, 16 Jun 2020 14:07:01 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/nvm/</guid>
+      <description>一、下载nvm github上下载nvm最新版本  nvm-noinstall.zip 是绿色免安装版本，但是使用之前需要配置（推荐） nvm-setup.zip： 这是一个安装包，下载之后点击安装，无需配置就可以使用，很方便  二、安装nvm   nvm-noinstall.zip 下载完成解压在C:\dev\nvm。里面的文件列表如下
+  双击install.cmd，直接回车，生成目录settings.txt文件。把这个文件剪切到C:\dev\nvm目录中。
+（不存在则新建，新建后的txt文件不要修改其文件编码,使用默认的ANSI格式，否则无法正确解析配置文件中的内容 ）
+root: C:\dev\nvm （根据自己情况配置） root:后面一定要有一个空格 path: C:\dev\nodejs （根据自己情况配置）path:后面一定要有一个空格 arch: 64 proxy: none node_mirror: http://npm.taobao.org/mirrors/node/ npm_mirror: https://npm.taobao.org/mirrors/npm/ ​ 注意: root:和path: 后面一定要有一个空格否则在安装node的时候不会安装到nvm文件夹下
+  配置环境变量
+window+r 输入sysdm.cpl 快捷方式打开系统属性面板，在高级里面找到环境变量，或者在我的电脑右击属性——》高级系统设置——》高级-——》环境变量
+NVM_HOME：nvm.exe 所在目录&amp;lt;==&amp;gt; setting**s**.txt中的root值 NVM_SYMLINK：node 快捷方式所在的目录 &amp;lt;==&amp;gt; setting**s**.txt中的root值 PATH中添加%NVM_HOME% 和**;**%NVM_SYMLINK% 验证：打开CMD通过set NVM_HOME和 set NVM_SYMLINK 命令查看环境变量是否配置成功
+成功则显示如下：
+  在cmd输入nvm 查看nvm详细信息，如果出现详细信息，所以已经安装成功，但是在window10 可能会出现 ‘nvm’ 不是内部或外部命令，也不是可运行的程序或批处理文件。这是cmd的问题，我们可以打开window+r输入powershell打开powershell，powershell可以看作是cmd 的升级版   切换node 版本 nvm list查看版本 nvm use 版本号 （切换到node 版本） node -v 查看版本 （确认安装成功） 在vsCode允许node 环境 1.</description>
+    </item>
+    
+  </channel>
+</rss>

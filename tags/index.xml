@@ -6,10 +6,19 @@
     <description>Recent content in Tags on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Fri, 03 Jul 2020 10:27:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2020 16:28:52 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>https://chenwenwenwen.github.io/tags/hugo/</link>
+      <pubDate>Fri, 03 Jul 2020 16:28:52 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>基础知识</title>
@@ -17,6 +26,15 @@
       <pubDate>Fri, 03 Jul 2020 10:27:49 +0800</pubDate>
       
       <guid>https://chenwenwenwen.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>配置</title>
+      <link>https://chenwenwenwen.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 18 Jun 2020 10:51:03 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/tags/%E9%85%8D%E7%BD%AE/</guid>
       <description></description>
     </item>
     
