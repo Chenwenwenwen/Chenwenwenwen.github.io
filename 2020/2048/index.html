@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/" />
+  
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2020/2048/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           2048游戏制作 | しずか
+       
+  </title>
+  <meta name="title" content="2048游戏制作 | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "2048游戏制作",
+    "headline" : "2048游戏制作",
+    "description" : "游戏实现：开始游戏\n一、游戏架构设定  UI-HTML、CSS 游戏逻辑-Js、Jquery 游戏数据 动画效果逻辑-js\/jquery 支撑逻辑-js  项目目录 css-2048.cssjs-jquery-1.8.2.min.js\tmain2048.js\tshowanimation2048.js\tsupport2048.jsindex.html游戏基础设定 通过键盘上下左右进行移动，当界面不可再移动的时候设定为Game over\n二、构建页面元素 ​\t头部显示游戏名、重新开始游戏按钮、分数\n\u0026lt;header\u0026gt; \u0026lt;h1\u0026gt;2048\u0026lt;\/h1\u0026gt; \u0026lt;a href=\u0026quot;javascript:newgame();\u0026quot; id=\u0026quot;newgamebutton\u0026quot;\u0026gt;New Game\u0026lt;\/a\u0026gt; \u0026lt;p\u0026gt;score:\u0026lt;span id=\u0026quot;score\u0026quot;\u0026gt;0\u0026lt;\/span\u0026gt;\u0026lt;\/p\u0026gt; \u0026lt;\/header\u0026gt; ​\t整个格子宽高总共为500px，每个小格子宽高为100px，每个小格子之间的间隔20px。\n\u0026lt;!--小格子--\u0026gt; \u0026lt;div id=\u0026quot;grid-container\u0026quot;\u0026gt; \/\/一行为例 \u0026lt;div class=\u0026quot;grid-cell\u0026quot; id=\u0026quot;grid-cell-0-0\u0026quot;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;div class=\u0026quot;grid-cell\u0026quot; id=\u0026quot;grid-cell-0-1\u0026quot;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;div class=\u0026quot;grid-cell\u0026quot; id=\u0026quot;grid-cell-0-2\u0026quot;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;div class=\u0026quot;grid-cell\u0026quot; id=\u0026quot;grid-cell-0-3\u0026quot;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;\/div\u0026gt; 三、游戏逻辑 board 就相当于全部小格子的二维数组 ，存放的是格子的内容\nhasConflicted记录是否发生过一个add\nboard 、hasConflicted数组初始化为一维数组\u0026mdash;\u0026mdash;-\u0026gt;在初始化的时候需要变成二维数组\nvar board = new Array() var score = 0 \/\/分数初始化为0 var hasConflicted = new Array(); 把移动的模块设置为number-cell-i-jde 小格子，把文字内容存放在board数组，通过updateBoardView()函数去控制显示到number-cell格子",
+    "inLanguage" : "zh-hans",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-15 10:44:00 \u002b0800 CST",
+    "dateModified" : "2020-07-15 10:44:00 \u002b0800 CST",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2020\/2048\/",
+    "wordCount" : "85",
+    "keywords" : [ "css","js", "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">2048游戏制作</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-15 itemprop="datePublished">July 15, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://chenwenwenwen.github.io/categories/%E5%B0%8F%E6%B8%B8%E6%88%8F/"> 小游戏 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>游戏实现：<a href="https://chenwenwenwen.github.io/2048/">开始游戏</a></p>
+<h1 id="一游戏架构设定">一、游戏架构设定</h1>
+<ul>
+<li>UI-HTML、CSS</li>
+<li>游戏逻辑-Js、Jquery</li>
+<li>游戏数据</li>
+<li>动画效果逻辑-js/jquery</li>
+<li>支撑逻辑-js</li>
+</ul>
+<h3 id="项目目录">项目目录</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">css-2048.css<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>js-jquery-1.8.2.min.js<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>	main2048.js<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>	showanimation2048.js<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>	support2048.js<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>index.html<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h3 id="游戏基础设定">游戏基础设定</h3>
+<p>通过键盘上下左右进行移动，当界面不可再移动的时候设定为Game over</p>
+<h1 id="二构建页面元素">二、构建页面元素</h1>
+<p>​	头部显示游戏名、重新开始游戏按钮、分数</p>
+<pre><code>&lt;header&gt;
+	&lt;h1&gt;2048&lt;/h1&gt;
+	&lt;a href=&quot;javascript:newgame();&quot; id=&quot;newgamebutton&quot;&gt;New Game&lt;/a&gt;
+	&lt;p&gt;score:&lt;span id=&quot;score&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+&lt;/header&gt;
+</code></pre><p>​	整个格子宽高总共为500px，每个小格子宽高为100px，每个小格子之间的间隔20px。</p>
+<pre><code>&lt;!--小格子--&gt;
+	&lt;div id=&quot;grid-container&quot;&gt;
+		//一行为例
+		&lt;div class=&quot;grid-cell&quot; id=&quot;grid-cell-0-0&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;grid-cell&quot; id=&quot;grid-cell-0-1&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;grid-cell&quot; id=&quot;grid-cell-0-2&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;grid-cell&quot; id=&quot;grid-cell-0-3&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre><p><img src="https://raw.githubusercontent.com/Chenwenwenwen/image/master/2048-1.png" alt="格子设置"></p>
+<h1 id="三游戏逻辑">三、游戏逻辑</h1>
+<p>board 就相当于全部小格子的二维数组 ，存放的是格子的内容</p>
+<p>hasConflicted记录是否发生过一个add</p>
+<p>board 、hasConflicted数组初始化为一维数组&mdash;&mdash;-&gt;在初始化的时候需要变成二维数组</p>
+<pre><code>var board = new Array()
+var score = 0 //分数初始化为0
+var hasConflicted = new Array();
+</code></pre><p>把移动的模块设置为number-cell-i-jde 小格子，把文字内容存放在board数组，通过updateBoardView()函数去控制显示到number-cell格子</p>
+<p><img src="https://raw.githubusercontent.com/Chenwenwenwen/image/master/2048-2.png" alt="格子分解"></p>
+<h1 id="四游戏逻辑交互">四、游戏逻辑交互</h1>
+<p>以向左移动为例子</p>
+<p>首先判断能否向左移动：&mdash;&gt;函数canMoveLeft()实现判断</p>
+<ol>
+<li>​	左边是否没有数字？</li>
+<li>​	左边的内容是否和自己相等，能否合并？</li>
+</ol>
+<p>如果可以移动，则需要对左侧的位置进行判断，是否可以为落脚点？&mdash;&gt;函数MoveLeft()实现、</p>
+<p>判断依据：</p>
+<ol>
+<li>落脚位置是否为空？</li>
+<li>落脚位置数字和待定元素数字相等？</li>
+<li>移动路径是否有障碍物？</li>
+</ol>
+<h1 id="五游戏的优化">五、游戏的优化</h1>
+<p>1.分数变动、游戏结束的动画可以进行优化</p>
+<p>2.把2048改成其他内容，游戏规则不变，变成定制的2048</p>
+<p>3.增加移动的格子或者添加障碍物，给游戏增加难度或者增加游戏模式</p>
+
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://chenwenwenwen.github.io/2020/2048/>https://chenwenwenwen.github.io/2020/2048/</span>
+            </p>
+            
+            
+
+            <h5 id="wc" class="copyright-item">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/css/">
+                    #css</a></span>
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/js/">
+                    #js</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://chenwenwenwen.github.io/2020/leaveit%E6%B7%BB%E5%8A%A0%E5%8A%9F%E8%83%BD/" class="prev" rel="prev" title="LeaveIt主题功能优化"><i class="iconfont icon-left"></i>&nbsp;LeaveIt主题功能优化</a>
+         
+        
+    </div>
+    <br/>
+    <div class="post-comment">
+          
+
+             
+            
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'OvTg5G1h4Qi5YFdoxMN1AKdx-gzGzoHsz',
+      appKey: 'nKsq2pVzlTJ5WENA4egcakKD',
+      notify: 'false', 
+      verify: 'false', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
