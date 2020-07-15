@@ -46,7 +46,7 @@ echo &amp;#39;theme = &amp;#34;ananke&amp;#34;&amp;#39; &amp;gt;&amp;gt; config.
 hugo new posts/test.md 可以用文本文件或 Markdown 编辑器打开文件 post/test.md ，并增加点内容。
 PS：默认创建的是草稿类型，需要将draft值改为false才能看到页面
 推送新文章 在网站的主目录下
-hexo new posts/文章名.md hugo --theme=主题名称 cd public git add -A git commit -m &amp;#34;描述内容&amp;#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：// localhost：1313 /的新站点。</description>
+hugo new posts/文章名.md hugo --theme=主题名称 cd public git add -A git commit -m &amp;#34;描述内容&amp;#34; git push -u origin master Step5：开启Hugo服务器 hugo server -D 浏览至http：// localhost：1313 /的新站点。</description>
     </item>
     
   </channel>
