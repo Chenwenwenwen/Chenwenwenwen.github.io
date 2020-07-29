@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="https://chenwenwenwen.github.io/2020/2048/" />
+  <link rel="next" href="https://chenwenwenwen.github.io/2020/http%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" />
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2020/rvm/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           使用rvm管理多版本Ruby | しずか
+       
+  </title>
+  <meta name="title" content="使用rvm管理多版本Ruby | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "使用rvm管理多版本Ruby",
+    "headline" : "使用rvm管理多版本Ruby",
+    "description" : "使用rvm管理多版本ruby 一、安装rvm   如果没有安装 curl，先安装\ncurl sudo apt-get install curl   安装 RVM\n\\curl -sSL [https:\/\/get.rvm.io](https:\/\/get.rvm.io\/) | bash -s stable 下载连接被墙，解决方法：https:\/\/www.cnblogs.com\/Dylansuns\/p\/12309847.html\n安装成功：\n  加载 RVM，加载后才能使用！！\nsource ~\/.bashrcsource ~\/.bash_profilesource ~\/.profile  查看版本\nrvm -v正常结果：\nrvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https:\/\/rvm.io]   二、安装ruby   看下rvm下的所有ruby版本的程序\nrvm list known   安装你想要的ruby版本\nrvm install 2.5.3  如果报以下错误\n\/etc\/apt\/sources.list 执行下面，两三次\nrvm autolibs disable  使用指定版本",
+    "inLanguage" : "zh-hans",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-27 14:16:12 \u002b0800 CST",
+    "dateModified" : "2020-07-27 14:16:12 \u002b0800 CST",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2020\/rvm\/",
+    "wordCount" : "80",
+    "keywords" : [ "配置", "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">使用rvm管理多版本Ruby</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-27 itemprop="datePublished">July 27, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="使用rvm管理多版本ruby">使用rvm管理多版本ruby</h1>
+<h3 id="一安装rvm">一、安装rvm</h3>
+<ol>
+<li>
+<p>如果没有安装 curl，先安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">curl sudo apt<span style="color:#f92672">-</span>get install curl
+</code></pre></div></li>
+<li>
+<p>安装 RVM</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">\curl <span style="color:#f92672">-</span>sSL <span style="color:#f92672">[</span><span style="color:#e6db74">https</span>:<span style="color:#e6db74">//</span>get<span style="color:#f92672">.</span>rvm<span style="color:#f92672">.</span>io<span style="color:#f92672">]</span>(<span style="color:#e6db74">https</span>:<span style="color:#e6db74">//</span>get<span style="color:#f92672">.</span>rvm<span style="color:#f92672">.</span>io<span style="color:#f92672">/</span>) <span style="color:#f92672">|</span> bash <span style="color:#f92672">-</span>s stable 
+</code></pre></div><p>下载连接被墙，解决方法：https://www.cnblogs.com/Dylansuns/p/12309847.html</p>
+<p>安装成功：</p>
+<p><img src="/images/assets/rvm1.png" alt="rvm1"></p>
+</li>
+<li>
+<p>加载 RVM，加载后才能使用！！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">source ~/.bashrc<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>source ~/.bash_profile<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>source ~/.profile<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>查看版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm -v<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>正常结果：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"> rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io] <span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+</ol>
+<h3 id="二安装ruby">二、安装ruby</h3>
+<ol>
+<li>
+<p>看下rvm下的所有ruby版本的程序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"> rvm list known <span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>安装你想要的ruby版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm install 2.5.3<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>如果报以下错误</p>
+<p><code>/etc/apt/sources.list</code> 执行下面，两三次</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm autolibs disable<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>使用指定版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">ruby rvm 1.9.2<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>查看当前 ruby 版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"> ruby -v 
+</code></pre></div></li>
+<li>
+<p>设置 RVM 默认版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm --default use 1.9.2<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>使用默认版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">ruby rvm default <span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div></li>
+<li>
+<p>删除一个版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">rvm remove 1.9.2 
+</code></pre></div></li>
+</ol>
+
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://chenwenwenwen.github.io/2020/rvm/>https://chenwenwenwen.github.io/2020/rvm/</span>
+            </p>
+            
+            
+
+            <h5 id="wc" class="copyright-item">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/%E9%85%8D%E7%BD%AE/">
+                    #配置</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://chenwenwenwen.github.io/2020/2048/" class="prev" rel="prev" title="2048游戏制作"><i class="iconfont icon-left"></i>&nbsp;2048游戏制作</a>
+         
+        
+        <a href="https://chenwenwenwen.github.io/2020/http%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" class="next" rel="next" title="Http网络协议">Http网络协议&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+    <br/>
+    <div class="post-comment">
+          
+
+             
+            
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'OvTg5G1h4Qi5YFdoxMN1AKdx-gzGzoHsz',
+      appKey: 'nKsq2pVzlTJ5WENA4egcakKD',
+      notify: 'false', 
+      verify: 'false', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

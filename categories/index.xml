@@ -6,10 +6,28 @@
     <description>Recent content in Categories on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Wed, 15 Jul 2020 10:44:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 14:20:27 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>编程 · 技术</title>
+      <link>https://chenwenwenwen.github.io/categories/%E7%BC%96%E7%A8%8B-%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Wed, 29 Jul 2020 14:20:27 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/categories/%E7%BC%96%E7%A8%8B-%E6%8A%80%E6%9C%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具 · 配置</title>
+      <link>https://chenwenwenwen.github.io/categories/%E5%B7%A5%E5%85%B7-%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 27 Jul 2020 14:16:12 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/categories/%E5%B7%A5%E5%85%B7-%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>小游戏</title>
@@ -26,24 +44,6 @@
       <pubDate>Fri, 03 Jul 2020 16:28:52 +0800</pubDate>
       
       <guid>https://chenwenwenwen.github.io/categories/%E5%8D%9A%E5%AE%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>编程 · 技术</title>
-      <link>https://chenwenwenwen.github.io/categories/%E7%BC%96%E7%A8%8B-%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Fri, 03 Jul 2020 10:27:49 +0800</pubDate>
-      
-      <guid>https://chenwenwenwen.github.io/categories/%E7%BC%96%E7%A8%8B-%E6%8A%80%E6%9C%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具 · 配置</title>
-      <link>https://chenwenwenwen.github.io/categories/%E5%B7%A5%E5%85%B7-%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Thu, 18 Jun 2020 10:51:03 +0800</pubDate>
-      
-      <guid>https://chenwenwenwen.github.io/categories/%E5%B7%A5%E5%85%B7-%E9%85%8D%E7%BD%AE/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,30 @@
     <description>Recent content in 工具 · 配置 on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Thu, 18 Jun 2020 10:51:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 14:16:12 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/categories/%E5%B7%A5%E5%85%B7-%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用rvm管理多版本Ruby</title>
+      <link>https://chenwenwenwen.github.io/2020/rvm/</link>
+      <pubDate>Mon, 27 Jul 2020 14:16:12 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/rvm/</guid>
+      <description>使用rvm管理多版本ruby 一、安装rvm   如果没有安装 curl，先安装
+curl sudo apt-get install curl   安装 RVM
+\curl -sSL [https://get.rvm.io](https://get.rvm.io/) | bash -s stable 下载连接被墙，解决方法：https://www.cnblogs.com/Dylansuns/p/12309847.html
+安装成功：
+  加载 RVM，加载后才能使用！！
+source ~/.bashrcsource ~/.bash_profilesource ~/.profile  查看版本
+rvm -v正常结果：
+rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]   二、安装ruby   看下rvm下的所有ruby版本的程序
+rvm list known   安装你想要的ruby版本
+rvm install 2.5.3  如果报以下错误
+/etc/apt/sources.list 执行下面，两三次
+rvm autolibs disable  使用指定版本</description>
+    </item>
     
     <item>
       <title>在非系统盘安装 WSL</title>
