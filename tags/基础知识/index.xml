@@ -6,7 +6,7 @@
     <description>Recent content in 基础知识 on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Wed, 29 Jul 2020 14:20:27 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2020 14:20:27 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,43 +14,27 @@
     <item>
       <title>Http网络协议</title>
       <link>https://chenwenwenwen.github.io/2020/http%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</link>
-      <pubDate>Wed, 29 Jul 2020 14:20:27 +0800</pubDate>
+      <pubDate>Wed, 22 Jul 2020 14:20:27 +0800</pubDate>
       
       <guid>https://chenwenwenwen.github.io/2020/http%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</guid>
       <description>一、了解Web和网络基础 Web是建立在Http协议上通信的。
 TCP/IP协议：
    应用层 传输层 网络层（网络互联层） 链路层（数据链路层、网络接口层）     向用户提供应用服务时通信的活动。 对应用层提供处于两台计算机之间的数据传输 处理在网络上流动的数据包。数据包是网络传输的最小单位。 处理连接网络的硬件部分。   TCP/IP协议族内预存了各类通用的应用服务，比如FTP(文件传输协议)和DNS（域名系统）服务就是其中两类。 两个不同性质的协议: TCP（传输控制协议）和UDP(用户数据报协议) 规定了通过怎么样的路径（所谓的传输路线）到达对方的电脑，把数据包传给对方    HTTP协议也处于这层  作用就是在众多选项内选择一条传输路线。     TCP/IP通信传输流
-与HTTP关系密切的协议：IP、TCP和DNS 一、负责传输的IP协议
-IP网际协议位于网络层，作用是把各种数据包传送给对方。
-确保确实传送到对方需要满足各类条件，其中两个重要条件是IP地址和MAC地址。
-IP地址：指明了节点被分配的地址， MAC地址：指网卡所属的固定地址。
-IP地址可以和MAC地址进行配对。
-IP地址可变换，但MAC地址基本上不会更改。
-使用ARP协议凭借MAC地址进行通信：
-ARP地址是一种用以解析地址的协议，根据通信方的IP地址就可以反查出对应的MAC地址。
-二、确保可靠性的TCP协议
-TCP属于传输层，提供可靠的字节流服务。
+与HTTP关系密切的协议：IP、TCP和DNS 一、负责传输的IP协议   IP网际协议位于网络层，作用是把各种数据包传送给对方。
+  确保确实传送到对方需要满足各类条件，其中两个重要条件是IP地址和MAC地址。
+  IP地址：指明了节点被分配的地址， MAC地址：指网卡所属的固定地址。
+  IP地址可以和MAC地址进行配对。
+  IP地址可变换，但MAC地址基本上不会更改。
+  使用ARP协议凭借MAC地址进行通信：
+  ARP地址是一种用以解析地址的协议，根据通信方的IP地址就可以反查出对应的MAC地址。
+  二、确保可靠性的TCP协议 TCP属于传输层，提供可靠的字节流服务。
 字节流服务：为了方便传输，将大块数据分割成以报文段为单位的数据包进行管理。
 确保数据能够到达目标
 为了让数据准确无误的到达目标，采用三次握手策略
 TCP的标志：SYN和ACK
 1.发送带有SYN标志数据包给对方
 2.对方收到后，回复一个带SYN/ACK标志的包以表达确认信息
-3.最后发送一个带有ACK的包，表示&amp;quot;握手&amp;quot;结束
-三、负责域名解析的DNS
-DNS服务是和HTTP协议一样位于应用层的协议，它提供域名到IP地址之间的解析服务。
-DNS协议提供通过域名查找IP地址，或者从IP地址反查域名的服务。
-结合几种协议形成的流程图
-URL和URI URL：使用Web浏览器访问Web页面时需要输入的网页地址
-URI：由某个协议方案表示的资源的定位标识符。
-URI用标识某一互联网资源，而URL表示资源地点。所以URL就是URI的子集。
-URI格式
-二、简单的HTTP协议 HTTP协议：用于客户端和服务器之间的通信
-请求报文是由请求方法、请求URL、协议版本、可选的请求首部字段和内容实体构成的。
-回响报文：协议版本、状态码、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。
-HTTP是不保存状态的协议，即无状态协议。
-协议本身并不保留之前一切的请求或响应报文的信息。目的是为了更快地处理大量事务，确保协议的可伸缩性。
-HTTP/1.1虽然是无状态协议，但是为了实现期望的保持状态功能，引入了Cookie技术。</description>
+3.最后发送一个带有ACK的包，表示&amp;quot;握手&amp;quot;结束</description>
     </item>
     
     <item>
