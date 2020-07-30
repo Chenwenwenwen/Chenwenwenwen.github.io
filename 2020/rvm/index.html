@@ -48,7 +48,7 @@
     "articleSection" : "posts",
     "name" : "使用rvm管理多版本Ruby",
     "headline" : "使用rvm管理多版本Ruby",
-    "description" : "使用rvm管理多版本ruby 一、安装rvm   如果没有安装 curl，先安装\ncurl sudo apt-get install curl   安装 RVM\n\\curl -sSL [https:\/\/get.rvm.io](https:\/\/get.rvm.io\/) | bash -s stable 下载连接被墙，解决方法：https:\/\/www.cnblogs.com\/Dylansuns\/p\/12309847.html\n安装成功：\n  加载 RVM，加载后才能使用！！\nsource ~\/.bashrcsource ~\/.bash_profilesource ~\/.profile  查看版本\nrvm -v正常结果：\nrvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https:\/\/rvm.io]   二、安装ruby   看下rvm下的所有ruby版本的程序\nrvm list known   安装你想要的ruby版本\nrvm install 2.5.3  如果报以下错误\n\/etc\/apt\/sources.list 执行下面，两三次\nrvm autolibs disable  使用指定版本",
+    "description" : "使用rvm管理多版本ruby 一、安装rvm   如果没有安装 curl，先安装\ncurl sudo apt-get install curl   安装 RVM\n\\curl -sSL [https:\/\/get.rvm.io](https:\/\/get.rvm.io\/) | bash -s stable 下载连接被墙，解决方法：https:\/\/www.cnblogs.com\/Dylansuns\/p\/12309847.html\n安装成功：\n  加载 RVM，加载后才能使用！！\nsource ~\/.bashrcsource ~\/.bash_profilesource ~\/.profile  查看版本\nrvm -v正常结果：\nrvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https:\/\/rvm.io]   二、安装ruby   看下rvm下的所有ruby版本的程序\nrvm list known   安装你想要的ruby版本\nrvm install 2.5.8  如果报以下错误\n\/etc\/apt\/sources.list 执行下面，两三次\nrvm autolibs disable  使用指定版本",
     "inLanguage" : "zh-hans",
     "author" : "wen",
     "creator" : "wen",
@@ -173,7 +173,7 @@
 <p>查看版本</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm -v<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>正常结果：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"> rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io] <span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText"> rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io] <span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div></li>
 </ol>
 <h3 id="二安装ruby">二、安装ruby</h3>
@@ -184,7 +184,7 @@
 </span></code></pre></div></li>
 <li>
 <p>安装你想要的ruby版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm install 2.5.3<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm install 2.5.8<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div></li>
 <li>
 <p>如果报以下错误</p>
@@ -193,7 +193,7 @@
 </span></code></pre></div></li>
 <li>
 <p>使用指定版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">ruby rvm 1.9.2<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">ruby rvm 2.5.8<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div></li>
 <li>
 <p>查看当前 ruby 版本</p>
@@ -201,7 +201,7 @@
 </code></pre></div></li>
 <li>
 <p>设置 RVM 默认版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm --default use 1.9.2<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-reStructuredText" data-lang="reStructuredText">rvm --default use 2.5.8<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div></li>
 <li>
 <p>使用默认版本</p>
@@ -209,7 +209,7 @@
 </span></code></pre></div></li>
 <li>
 <p>删除一个版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">rvm remove 1.9.2 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">rvm remove 2.5.8 
 </code></pre></div></li>
 </ol>
 

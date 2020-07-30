@@ -24,9 +24,9 @@ curl sudo apt-get install curl   安装 RVM
   加载 RVM，加载后才能使用！！
 source ~/.bashrcsource ~/.bash_profilesource ~/.profile  查看版本
 rvm -v正常结果：
-rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]   二、安装ruby   看下rvm下的所有ruby版本的程序
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]   二、安装ruby   看下rvm下的所有ruby版本的程序
 rvm list known   安装你想要的ruby版本
-rvm install 2.5.3  如果报以下错误
+rvm install 2.5.8  如果报以下错误
 /etc/apt/sources.list 执行下面，两三次
 rvm autolibs disable  使用指定版本</description>
     </item>
