@@ -48,7 +48,7 @@
     "articleSection" : "posts",
     "name" : "2048游戏制作",
     "headline" : "2048游戏制作",
-    "description" : "游戏实现：开始游戏\n一、游戏架构设定  UI-HTML、CSS 游戏逻辑-Js、Jquery 游戏数据 动画效果逻辑-js\/jquery 支撑逻辑-js  项目目录 css-2048.cssjs-jquery-1.8.2.min.js\tmain2048.js\tshowanimation2048.js\tsupport2048.jsindex.html游戏基础设定 通过键盘上下左右进行移动，当界面不可再移动的时候设定为Game over\n二、构建页面元素 ​\t头部显示游戏名、重新开始游戏按钮、分数\n\u0026lt;header\u0026gt;\t\u0026lt;h1\u0026gt;2048\u0026lt;\/h1\u0026gt;\t\u0026lt;a href=\u0026#34;javascript:newgame();\u0026#34; id=\u0026#34;newgamebutton\u0026#34;\u0026gt;New Game\u0026lt;\/a\u0026gt;\t\u0026lt;p\u0026gt;score:\u0026lt;span id=\u0026#34;score\u0026#34;\u0026gt;0\u0026lt;\/span\u0026gt;\u0026lt;\/p\u0026gt;\u0026lt;\/header\u0026gt;​\t整个格子宽高总共为500px，每个小格子宽高为100px，每个小格子之间的间隔20px。\n\u0026lt;!--小格子--\u0026gt;\t\u0026lt;div id=\u0026#34;grid-container\u0026#34;\u0026gt;\t\/\/一行为例\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-0\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-1\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-2\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-3\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;\/div\u0026gt;三、游戏逻辑 board 就相当于全部小格子的二维数组 ，存放的是格子的内容\nhasConflicted记录是否发生过一个add\nboard 、hasConflicted数组初始化为一维数组\u0026mdash;\u0026mdash;-\u0026gt;在初始化的时候需要变成二维数组\nvar board = new Array()var score = 0 \/\/分数初始化为0var hasConflicted = new Array();把移动的模块设置为number-cell-i-jde 小格子，把文字内容存放在board数组，通过updateBoardView()函数去控制显示到number-cell格子\n四、游戏逻辑交互 以向左移动为例子\n首先判断能否向左移动：\u0026mdash;\u0026gt;函数canMoveLeft()实现判断\n ​\t左边是否没有数字？ ​\t左边的内容是否和自己相等，能否合并？  如果可以移动，则需要对左侧的位置进行判断，是否可以为落脚点？\u0026mdash;\u0026gt;函数MoveLeft()实现、",
+    "description" : "游戏实现：开始游戏 代码\n一、游戏架构设定  UI-HTML、CSS 游戏逻辑-Js、Jquery 游戏数据 动画效果逻辑-js\/jquery 支撑逻辑-js  项目目录 css-2048.cssjs-jquery-1.8.2.min.js\tmain2048.js\tshowanimation2048.js\tsupport2048.jsindex.html游戏基础设定 通过键盘上下左右进行移动，当界面不可再移动的时候设定为Game over\n二、构建页面元素 ​\t头部显示游戏名、重新开始游戏按钮、分数\n\u0026lt;header\u0026gt;\t\u0026lt;h1\u0026gt;2048\u0026lt;\/h1\u0026gt;\t\u0026lt;a href=\u0026#34;javascript:newgame();\u0026#34; id=\u0026#34;newgamebutton\u0026#34;\u0026gt;New Game\u0026lt;\/a\u0026gt;\t\u0026lt;p\u0026gt;score:\u0026lt;span id=\u0026#34;score\u0026#34;\u0026gt;0\u0026lt;\/span\u0026gt;\u0026lt;\/p\u0026gt;\u0026lt;\/header\u0026gt;​\t整个格子宽高总共为500px，每个小格子宽高为100px，每个小格子之间的间隔20px。\n\u0026lt;!--小格子--\u0026gt;\t\u0026lt;div id=\u0026#34;grid-container\u0026#34;\u0026gt;\t\/\/一行为例\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-0\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-1\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-2\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;div class=\u0026#34;grid-cell\u0026#34; id=\u0026#34;grid-cell-0-3\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt;\t\u0026lt;\/div\u0026gt;三、游戏逻辑 board 就相当于全部小格子的二维数组 ，存放的是格子的内容\nhasConflicted记录是否发生过一个add\nboard 、hasConflicted数组初始化为一维数组\u0026mdash;\u0026mdash;-\u0026gt;在初始化的时候需要变成二维数组\nvar board = new Array()var score = 0 \/\/分数初始化为0var hasConflicted = new Array();把移动的模块设置为number-cell-i-jde 小格子，把文字内容存放在board数组，通过updateBoardView()函数去控制显示到number-cell格子\n游戏结束：当游戏没有空格且没有游戏空间的时候\n四、游戏逻辑交互 以向左移动为例子\n首先判断能否向左移动：\u0026mdash;\u0026gt;函数canMoveLeft()实现判断",
     "inLanguage" : "zh-hans",
     "author" : "wen",
     "creator" : "wen",
@@ -59,7 +59,7 @@
     "datePublished": "2020-07-15 10:44:00 \u002b0800 CST",
     "dateModified" : "2020-07-15 10:44:00 \u002b0800 CST",
     "url" : "https:\/\/chenwenwenwen.github.io\/2020\/2048\/",
-    "wordCount" : "79",
+    "wordCount" : "120",
     "keywords" : [ "css","js", "しずか"]
 }
 </script>
@@ -150,7 +150,7 @@
           
           
 
-          <p>游戏实现：<a href="https://chenwenwenwen.github.io/2048/">开始游戏</a></p>
+          <p>游戏实现：<a href="https://chenwenwenwen.github.io/2048/">开始游戏</a>   <a href="https://github.com/Chenwenwenwen/2048">代码</a></p>
 <h1 id="一游戏架构设定">一、游戏架构设定</h1>
 <ul>
 <li>UI-HTML、CSS</li>
@@ -194,6 +194,7 @@
 </span><span style="color:#960050;background-color:#1e0010"></span>var hasConflicted = new Array();<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>把移动的模块设置为number-cell-i-jde 小格子，把文字内容存放在board数组，通过updateBoardView()函数去控制显示到number-cell格子</p>
 <p><img src="/images/assets/2048-2.png" alt="格子分解"></p>
+<p>游戏结束：当游戏没有空格且没有游戏空间的时候</p>
 <h1 id="四游戏逻辑交互">四、游戏逻辑交互</h1>
 <p>以向左移动为例子</p>
 <p>首先判断能否向左移动：&mdash;&gt;函数canMoveLeft()实现判断</p>
@@ -204,11 +205,37 @@
 <p>如果可以移动，则需要对左侧的位置进行判断，是否可以为落脚点？&mdash;&gt;函数MoveLeft()实现、</p>
 <p>判断依据：</p>
 <ol>
-<li>落脚位置是否为空？</li>
+<li>落脚位置是否为空？&mdash;-&gt;board[i][k] == 0</li>
 <li>落脚位置数字和待定元素数字相等？</li>
 <li>移动路径是否有障碍物？</li>
 </ol>
-<h1 id="五游戏的优化">五、游戏的优化</h1>
+<h1 id="五移动端上运行">五、移动端上运行</h1>
+<p>显示处理:采用对于手机屏幕的百分比</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//获取手机屏幕宽度
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">documentWidth</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">screen</span>.<span style="color:#a6e22e">availWidth</span>;
+<span style="color:#75715e">//设定是92%大格子
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gridContainerWidth</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.92</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">documentWidth</span>;
+<span style="color:#75715e">//小方块是18%小格子
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">cellSideLength</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.18</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">documentWidth</span>;
+<span style="color:#75715e">//小方块之间的边距
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">cellSpace</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.04</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">documentWidth</span>;
+</code></pre></div><p>手指滑动处理：</p>
+<p>通过<code>document.addEventListener</code>函数获得滑动的起点终点，然后计算出两个个向量deltax和deltay，记录这两个向量，通过判断正负来判断左还是右，上还是下：</p>
+<p>​	例：当deltax的绝对值大于等于deltay，则方向是在x轴上左右移动。此时判断deltax是大于0还是小于0，如果大于0则表示向右移动。</p>
+<h1 id="六细节处理">六、细节处理</h1>
+<ul>
+<li>滑动合并的时候，只进行一次叠加</li>
+</ul>
+<p>通过一个二维数组记录是否已经发生过一个add。</p>
+<p>数组里面的每个格子都是false，当发过一次碰撞的时候就会变成true。</p>
+<p>合并的条件变为：左右两边相等且没有障碍物和数组格子为false。</p>
+<ul>
+<li>取消原本往上滑是下拉页码的效果</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;touchmove&#39;</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>){
+   <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
+});
+</code></pre></div><h1 id="七游戏的优化">七、游戏的优化</h1>
 <p>1.分数变动、游戏结束的动画可以进行优化</p>
 <p>2.把2048改成其他内容，游戏规则不变，变成定制的2048</p>
 <p>3.增加移动的格子或者添加障碍物，给游戏增加难度或者增加游戏模式</p>
