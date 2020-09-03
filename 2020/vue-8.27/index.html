@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="https://chenwenwenwen.github.io/2020/rvm/" />
+  
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2020/vue-8.27/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Vue 8 | しずか
+       
+  </title>
+  <meta name="title" content="Vue 8 | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Vue 8",
+    "headline" : "Vue 8",
+    "description" : "echart图表相关 把echart表弄成组件，方便管理\n\u0026lt;template\u0026gt; \u0026lt;div\u0026gt; \u0026lt;div class=\u0026#34;dashboard-container\u0026#34;\u0026gt; \u0026lt;puv-chart :chart-data=\u0026#34;chartData\u0026#34; \/\u0026gt; \u0026lt;el-row class=\u0026#34;mt\u0026#34;\u0026gt; \u0026lt;el-col :span=\u0026#34;12\u0026#34;\u0026gt; \/\/equ-chart =equChart  \u0026lt;equ-chart :chart-data=\u0026#34;equipmentData\u0026#34; \/\u0026gt; \u0026lt;\/el-col\u0026gt; \u0026lt;el-col :span=\u0026#34;12\u0026#34;\u0026gt; \u0026lt;ori-chart :chart-data=\u0026#34;originData\u0026#34; \/\u0026gt; \u0026lt;\/el-col\u0026gt; \u0026lt;\/el-row\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;\/template\u0026gt; \u0026lt;script\u0026gt; \/\/导出插件 import puvChart from \u0026#39;.\/components\/puv\u0026#39; import equChart from \u0026#39;.\/components\/equipment\u0026#39; import oriChart from \u0026#39;.\/components\/origin\u0026#39; import dateFormat from \u0026#39;@\/utils\/dateFormat\u0026#39; export default { name: \u0026#39;Dashboard\u0026#39;, components: { puvChart, equChart, oriChart }, data() { return { chartData: {}, equipmentData: {}, originData: {}, oriTable: [] } }, methods: { \/\/ 接口  setDate() { const _query = JSON.",
+    "inLanguage" : "zh-hans",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-08-27 14:44:51 \u002b0800 CST",
+    "dateModified" : "2020-08-27 14:44:51 \u002b0800 CST",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2020\/vue-8.27\/",
+    "wordCount" : "749",
+    "keywords" : [ "Vue", "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Vue 8</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-08-27 itemprop="datePublished">August 27, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="echart图表相关">echart图表相关</h2>
+<p>把echart表弄成组件，方便管理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dashboard-container&#34;</span>&gt;
+      &lt;<span style="color:#f92672">puv-chart</span> <span style="color:#f92672">:chart-data</span><span style="color:#e6db74">=&#34;chartData&#34;</span> /&gt;
+      &lt;<span style="color:#f92672">el-row</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mt&#34;</span>&gt;
+        &lt;<span style="color:#f92672">el-col</span> <span style="color:#f92672">:span</span><span style="color:#e6db74">=&#34;12&#34;</span>&gt;
+        	<span style="color:#75715e">//equ-chart =equChart
+</span><span style="color:#75715e"></span>          &lt;<span style="color:#f92672">equ-chart</span> <span style="color:#f92672">:chart-data</span><span style="color:#e6db74">=&#34;equipmentData&#34;</span> /&gt;
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-col&gt;</span>
+        &lt;<span style="color:#f92672">el-col</span> <span style="color:#f92672">:span</span><span style="color:#e6db74">=&#34;12&#34;</span>&gt;
+          &lt;<span style="color:#f92672">ori-chart</span> <span style="color:#f92672">:chart-data</span><span style="color:#e6db74">=&#34;originData&#34;</span> /&gt;
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-col&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-row&gt;</span>
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#75715e">//导出插件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">puvChart</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components/puv&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">equChart</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components/equipment&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">oriChart</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components/origin&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">dateFormat</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/utils/dateFormat&#39;</span>
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Dashboard&#39;</span>,
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">puvChart</span>,
+    <span style="color:#a6e22e">equChart</span>,
+    <span style="color:#a6e22e">oriChart</span>
+  },
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">chartData</span><span style="color:#f92672">:</span> {},
+      <span style="color:#a6e22e">equipmentData</span><span style="color:#f92672">:</span> {},
+      <span style="color:#a6e22e">originData</span><span style="color:#f92672">:</span> {},
+      <span style="color:#a6e22e">oriTable</span><span style="color:#f92672">:</span> []
+    }
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#75715e">// 接口
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setDate</span>() {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_query</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">query</span>))
+      <span style="color:#a6e22e">_query</span>.<span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">paging</span>.<span style="color:#a6e22e">page</span>
+      <span style="color:#a6e22e">_query</span>.<span style="color:#a6e22e">page_size</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">paging</span>.<span style="color:#a6e22e">page_size</span>
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">_query</span>) {
+        <span style="color:#f92672">!</span><span style="color:#a6e22e">_query</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">_query</span>[<span style="color:#a6e22e">key</span>]
+      }
+
+      <span style="color:#75715e">// 折线图
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$api</span>.<span style="color:#a6e22e">origin</span>.<span style="color:#a6e22e">GetPvUv</span>(<span style="color:#a6e22e">_query</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>
+      })
+      <span style="color:#75715e">// 访问设备
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$api</span>.<span style="color:#a6e22e">origin</span>.<span style="color:#a6e22e">GetUA</span>(<span style="color:#a6e22e">_query</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">equipmentData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">equipmentData</span>.<span style="color:#a6e22e">ua</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">tipChart</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+        }
+      })
+      <span style="color:#75715e">// 访问来源
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$api</span>.<span style="color:#a6e22e">origin</span>.<span style="color:#a6e22e">GetOriginSort</span>(<span style="color:#a6e22e">_query</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">originData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>
+      })
+    }
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scss&#34;</span> <span style="color:#a6e22e">scoped</span>&gt;
+
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><p>eChart表&mdash;折线图</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;charts-cont&#34;</span>&gt;
+      <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">数据显示</span> <span style="color:#f92672">--&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;charts-wrap&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;countChart&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;charts&#34;</span> /&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">echarts</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;echarts&#39;</span>
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;CountChart&#39;</span>,
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">chartData</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> Object,
+      <span style="color:#66d9ef">default</span>() {
+        <span style="color:#66d9ef">return</span> {}
+      }
+    }
+  },
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">countChart</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>, <span style="color:#75715e">// 图表对象
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">chartOption</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">tooltip</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">trigger</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;axis&#39;</span>
+        },
+        <span style="color:#a6e22e">legend</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;访客量&#39;</span>, <span style="color:#e6db74">&#39;浏览量&#39;</span>]
+        },
+        <span style="color:#a6e22e">xAxis</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;category&#39;</span>,
+          <span style="color:#a6e22e">boundaryGap</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">// 从原点开始绘制
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> []
+        },
+        <span style="color:#a6e22e">yAxis</span><span style="color:#f92672">:</span> {},
+        <span style="color:#a6e22e">dataZoom</span><span style="color:#f92672">:</span> [{
+          <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;inside&#39;</span>,
+          <span style="color:#a6e22e">start</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+          <span style="color:#a6e22e">end</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>
+        }],
+        <span style="color:#a6e22e">series</span><span style="color:#f92672">:</span> [
+          {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;访客量&#39;</span>,
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;line&#39;</span>,
+            <span style="color:#a6e22e">stack</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;uv&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> []
+          },
+          {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;浏览量&#39;</span>,
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;line&#39;</span>,
+            <span style="color:#a6e22e">stack</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pv&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> []
+          }
+        ]
+      }
+    }
+  },
+  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">chartOption</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">o</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setOption</span>(<span style="color:#a6e22e">n</span>)
+    },
+    <span style="color:#a6e22e">chartData</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setData</span>()
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>()
+    }
+  },
+  <span style="color:#a6e22e">created</span>() {
+
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">init</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setData</span>()
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>()
+      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;resize&#39;</span>, () =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">countChart</span>.<span style="color:#a6e22e">resize</span>()
+      })
+    },
+    <span style="color:#a6e22e">setData</span>() {
+      <span style="color:#75715e">//  源数据
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_uvArr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartData</span>.<span style="color:#a6e22e">uv</span>
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_pvArr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartData</span>.<span style="color:#a6e22e">pv</span>
+
+      <span style="color:#75715e">//  图表数据
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_xAxis</span> <span style="color:#f92672">=</span> []
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_seriesDataUV</span> <span style="color:#f92672">=</span> []
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_seriesDataPV</span> <span style="color:#f92672">=</span> []
+
+      <span style="color:#75715e">//  重组x时间轴数据
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">_uvArr</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) =&gt; {
+        <span style="color:#a6e22e">_xAxis</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">date</span>)
+        <span style="color:#a6e22e">_seriesDataUV</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">count</span>)
+        <span style="color:#a6e22e">_seriesDataPV</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">_pvArr</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">count</span>) <span style="color:#75715e">// 因为pv和uv数组长度相对应，所以直接用索引
+</span><span style="color:#75715e"></span>      })
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartOption</span>.<span style="color:#a6e22e">xAxis</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_xAxis</span>
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartOption</span>.<span style="color:#a6e22e">series</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_seriesDataUV</span>
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartOption</span>.<span style="color:#a6e22e">series</span>[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_seriesDataPV</span>
+    },
+    <span style="color:#a6e22e">render</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">countChart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">echarts</span>.<span style="color:#a6e22e">init</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;countChart&#39;</span>))
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setOption</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartOption</span>)
+    },
+    <span style="color:#a6e22e">setOption</span>(<span style="color:#a6e22e">options</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">countChart</span>.<span style="color:#a6e22e">setOption</span>(<span style="color:#a6e22e">options</span>)
+    }
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scss&#34;</span> <span style="color:#a6e22e">scoped</span>&gt;
+.<span style="color:#a6e22e">charts</span> {
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span><span style="color:#a6e22e">px</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><p>echart&mdash;饼图</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;charts-cont&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;total-cont&#34;</span>&gt;
+      <span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">数据显示</span> <span style="color:#f92672">--&gt;</span>
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;charts-wrap&#34;</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;originChart&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;equipment&#34;</span> /&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">mapGetters</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">echarts</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;echarts&#39;</span>
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;OriginChart&#39;</span>,
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">chartData</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> Object,
+      <span style="color:#66d9ef">default</span>() {
+        <span style="color:#66d9ef">return</span> {}
+      }
+    }
+  },
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">originChart</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>, <span style="color:#75715e">// 图表对象
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">origionOption</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;访问来源&#39;</span>,
+          <span style="color:#a6e22e">left</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;left&#39;</span>
+        },
+        <span style="color:#a6e22e">tooltip</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">trigger</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;item&#39;</span>,
+          <span style="color:#a6e22e">formatter</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{a} &lt;br/&gt;{b} : {c} ({d}%)&#39;</span>
+        },
+        <span style="color:#a6e22e">legend</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">orient</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;vertical&#39;</span>,
+          <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [],
+          <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;20%&#39;</span>,
+          <span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">120</span>
+        },
+        <span style="color:#a6e22e">series</span><span style="color:#f92672">:</span> [
+          {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;访问来源&#39;</span>,
+            <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pie&#39;</span>,
+            <span style="color:#a6e22e">radius</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;55%&#39;</span>,
+            <span style="color:#a6e22e">center</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;30%&#39;</span>, <span style="color:#e6db74">&#39;60%&#39;</span>],
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [],
+            <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> {
+              <span style="color:#a6e22e">show</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+            },
+            <span style="color:#a6e22e">emphasis</span><span style="color:#f92672">:</span> {
+              <span style="color:#a6e22e">itemStyle</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">shadowBlur</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+                <span style="color:#a6e22e">shadowOffsetX</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+                <span style="color:#a6e22e">shadowColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;rgba(0, 0, 0, 0.5)&#39;</span>
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    ...<span style="color:#a6e22e">mapGetters</span>([
+      <span style="color:#e6db74">&#39;name&#39;</span>
+    ])
+  },
+  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">origionOption</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">o</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setOption</span>(<span style="color:#a6e22e">n</span>)
+    },
+    <span style="color:#a6e22e">chartData</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">o</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">groups</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setData</span>()
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>()
+    }
+  },
+  <span style="color:#a6e22e">created</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">init</span>()
+  },
+  <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">init</span>() {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartData</span>.<span style="color:#a6e22e">groups</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setData</span>()
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">render</span>()
+      }
+      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;resize&#39;</span>, () =&gt; {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">originChart</span>.<span style="color:#a6e22e">resize</span>()
+      })
+    },
+    <span style="color:#a6e22e">setData</span>() {
+      <span style="color:#75715e">//  源数据
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">chartData</span>.<span style="color:#a6e22e">groups</span>
+
+      <span style="color:#75715e">// 图表数据
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_legend</span> <span style="color:#f92672">=</span> []
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_series</span> <span style="color:#f92672">=</span> []
+
+      <span style="color:#75715e">// 重组
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">_data</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+        <span style="color:#a6e22e">_legend</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">name</span>)
+        <span style="color:#a6e22e">_series</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> parseInt(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">count</span>), <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">name</span> })
+      })
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">origionOption</span>.<span style="color:#a6e22e">legend</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_legend</span>
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">origionOption</span>.<span style="color:#a6e22e">series</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_series</span>
+    },
+    <span style="color:#a6e22e">render</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">originChart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">echarts</span>.<span style="color:#a6e22e">init</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;originChart&#39;</span>))
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">originChart</span>.<span style="color:#a6e22e">setOption</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">origionOption</span>)
+    },
+    <span style="color:#a6e22e">setOption</span>(<span style="color:#a6e22e">options</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">originChart</span>.<span style="color:#a6e22e">setOption</span>(<span style="color:#a6e22e">options</span>)
+    }
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scss&#34;</span> <span style="color:#a6e22e">scoped</span>&gt;
+.<span style="color:#a6e22e">equipment</span>{
+  <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">300</span><span style="color:#a6e22e">px</span>;
+  <span style="color:#a6e22e">margin</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">auto</span>;
+  <span style="color:#a6e22e">padding</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span><span style="color:#a6e22e">px</span>;
+ }
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><h2 id="导出">导出</h2>
+<pre><code>const _query = JSON.parse(JSON.stringify(this.query))
+      let result = ''
+      Object.entries(_query).forEach(item =&gt; {
+        result += `&amp;${item[0]}=${item[1]}`
+      })
+      result = result.substr(1, result.length)
+
+      return 'xxx地址' + '?' + result
+</code></pre><h2 id="除去json中的重复项">除去json中的重复项</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$api</span>.<span style="color:#a6e22e">origin</span>.<span style="color:#a6e22e">list</span>().<span style="color:#a6e22e">then</span>(({ <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span> }) =&gt; {
+        <span style="color:#75715e">// res.data.rows.forEach(item =&gt; {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//   // this.activity.push({ value: item.activity_name, label: item.activity_name })
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// })
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hash</span> <span style="color:#f92672">=</span> {}
+        <span style="color:#75715e">// const newArr = []
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">activity_name</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">activity_name</span>]) {
+            <span style="color:#a6e22e">hash</span>[<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">activity_name</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">activity</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">activity_name</span>, <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">activity_name</span> })
+          }
+        })
+      })
+</code></pre></div><h2 id="el-dialog-组件">el-dialog 组件</h2>
+<p>组件页</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">el-dialog</span>
+      <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;下载列表&#34;</span>
+      <span style="color:#f92672">:visible.sync</span><span style="color:#e6db74">=&#34;visible&#34;</span>
+      <span style="color:#f92672">:show</span><span style="color:#e6db74">=&#34;show&#34;</span>
+      <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">close</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;$emit(&#39;update:show&#39;, false)&#34;</span>
+    &gt;
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-dialog&gt;</span>
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">show</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> Boolean,
+      <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+    }
+  },
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">visible</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">show</span>,
+      <span style="color:#a6e22e">formLabelWidth</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;70px&#39;</span>,
+    }
+  },
+  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">show</span>() {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">visible</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">show</span>
+    }
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>引用页面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+&lt;<span style="color:#f92672">el-button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vertical-middle &#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;show = true&#34;</span>&gt;<span style="color:#a6e22e">下载</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/el-button&gt;</span>
+&lt;<span style="color:#f92672">service-dialog</span> <span style="color:#f92672">:show.sync</span><span style="color:#e6db74">=&#34;show&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">serviceDialog</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./components/down&#39;</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> {
+  <span style="color:#a6e22e">serviceDialog</span>
+  },
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">show</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    }
+  }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://chenwenwenwen.github.io/2020/vue-8.27/>https://chenwenwenwen.github.io/2020/vue-8.27/</span>
+            </p>
+            
+            
+
+            <h5 id="wc" class="copyright-item">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/vue/">
+                    #Vue</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://chenwenwenwen.github.io/2020/rvm/" class="prev" rel="prev" title="使用rvm管理多版本Ruby"><i class="iconfont icon-left"></i>&nbsp;使用rvm管理多版本Ruby</a>
+         
+        
+    </div>
+    <br/>
+    <div class="post-comment">
+          
+
+             
+            
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'OvTg5G1h4Qi5YFdoxMN1AKdx-gzGzoHsz',
+      appKey: 'nKsq2pVzlTJ5WENA4egcakKD',
+      notify: 'false', 
+      verify: 'false', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

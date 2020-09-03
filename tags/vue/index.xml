@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on しずか</title>
+    <link>https://chenwenwenwen.github.io/tags/vue/</link>
+    <description>Recent content in Vue on しずか</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 27 Aug 2020 14:44:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://chenwenwenwen.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue 8</title>
+      <link>https://chenwenwenwen.github.io/2020/vue-8.27/</link>
+      <pubDate>Thu, 27 Aug 2020 14:44:51 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/vue-8.27/</guid>
+      <description>echart图表相关 把echart表弄成组件，方便管理
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div class=&amp;#34;dashboard-container&amp;#34;&amp;gt; &amp;lt;puv-chart :chart-data=&amp;#34;chartData&amp;#34; /&amp;gt; &amp;lt;el-row class=&amp;#34;mt&amp;#34;&amp;gt; &amp;lt;el-col :span=&amp;#34;12&amp;#34;&amp;gt; //equ-chart =equChart  &amp;lt;equ-chart :chart-data=&amp;#34;equipmentData&amp;#34; /&amp;gt; &amp;lt;/el-col&amp;gt; &amp;lt;el-col :span=&amp;#34;12&amp;#34;&amp;gt; &amp;lt;ori-chart :chart-data=&amp;#34;originData&amp;#34; /&amp;gt; &amp;lt;/el-col&amp;gt; &amp;lt;/el-row&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; //导出插件 import puvChart from &amp;#39;./components/puv&amp;#39; import equChart from &amp;#39;./components/equipment&amp;#39; import oriChart from &amp;#39;./components/origin&amp;#39; import dateFormat from &amp;#39;@/utils/dateFormat&amp;#39; export default { name: &amp;#39;Dashboard&amp;#39;, components: { puvChart, equChart, oriChart }, data() { return { chartData: {}, equipmentData: {}, originData: {}, oriTable: [] } }, methods: { // 接口  setDate() { const _query = JSON.</description>
+    </item>
+    
+  </channel>
+</rss>
