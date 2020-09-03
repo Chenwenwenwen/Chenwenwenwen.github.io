@@ -24,10 +24,10 @@
   <title>
        
        
-           Vue 8 | しずか
+           echart、导出、弹窗组件 | しずか
        
   </title>
-  <meta name="title" content="Vue 8 | しずか">
+  <meta name="title" content="echart、导出、弹窗组件 | しずか">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -46,8 +46,8 @@
          "@id": "https:\/\/chenwenwenwen.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "Vue 8",
-    "headline" : "Vue 8",
+    "name" : "echart、导出、弹窗组件",
+    "headline" : "echart、导出、弹窗组件",
     "description" : "echart图表相关 把echart表弄成组件，方便管理\n\u0026lt;template\u0026gt; \u0026lt;div\u0026gt; \u0026lt;div class=\u0026#34;dashboard-container\u0026#34;\u0026gt; \u0026lt;puv-chart :chart-data=\u0026#34;chartData\u0026#34; \/\u0026gt; \u0026lt;el-row class=\u0026#34;mt\u0026#34;\u0026gt; \u0026lt;el-col :span=\u0026#34;12\u0026#34;\u0026gt; \/\/equ-chart =equChart  \u0026lt;equ-chart :chart-data=\u0026#34;equipmentData\u0026#34; \/\u0026gt; \u0026lt;\/el-col\u0026gt; \u0026lt;el-col :span=\u0026#34;12\u0026#34;\u0026gt; \u0026lt;ori-chart :chart-data=\u0026#34;originData\u0026#34; \/\u0026gt; \u0026lt;\/el-col\u0026gt; \u0026lt;\/el-row\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;\/template\u0026gt; \u0026lt;script\u0026gt; \/\/导出插件 import puvChart from \u0026#39;.\/components\/puv\u0026#39; import equChart from \u0026#39;.\/components\/equipment\u0026#39; import oriChart from \u0026#39;.\/components\/origin\u0026#39; import dateFormat from \u0026#39;@\/utils\/dateFormat\u0026#39; export default { name: \u0026#39;Dashboard\u0026#39;, components: { puvChart, equChart, oriChart }, data() { return { chartData: {}, equipmentData: {}, originData: {}, oriTable: [] } }, methods: { \/\/ 接口  setDate() { const _query = JSON.",
     "inLanguage" : "zh-hans",
     "author" : "wen",
@@ -118,7 +118,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Vue 8</h1>
+        <h1 class="post-title" itemprop="name headline">echart、导出、弹窗组件</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
                 <span class="post-time">
@@ -467,15 +467,15 @@
  }
 &lt;/<span style="color:#f92672">style</span>&gt;
 </code></pre></div><h2 id="导出">导出</h2>
-<pre><code>const _query = JSON.parse(JSON.stringify(this.query))
-      let result = ''
-      Object.entries(_query).forEach(item =&gt; {
-        result += `&amp;${item[0]}=${item[1]}`
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_query</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">query</span>))
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+      Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">_query</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+        <span style="color:#a6e22e">result</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">`&amp;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">0</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">=</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">item</span>[<span style="color:#ae81ff">1</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>
       })
-      result = result.substr(1, result.length)
+      <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">length</span>)
 
-      return 'xxx地址' + '?' + result
-</code></pre><h2 id="除去json中的重复项">除去json中的重复项</h2>
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;xxx地址&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">result</span>
+</code></pre></div><h2 id="除去json中的重复项">除去json中的重复项</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$api</span>.<span style="color:#a6e22e">origin</span>.<span style="color:#a6e22e">list</span>().<span style="color:#a6e22e">then</span>(({ <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span> }) =&gt; {
         <span style="color:#75715e">// res.data.rows.forEach(item =&gt; {
 </span><span style="color:#75715e"></span>        <span style="color:#75715e">//   // this.activity.push({ value: item.activity_name, label: item.activity_name })
