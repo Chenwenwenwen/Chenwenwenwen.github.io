@@ -6,10 +6,19 @@
     <description>Recent content in 编程 · 技术 on しずか</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Thu, 27 Aug 2020 14:44:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2020 14:24:50 +0800</lastBuildDate>
     
 	<atom:link href="https://chenwenwenwen.github.io/categories/%E7%BC%96%E7%A8%8B-%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>时间格式化</title>
+      <link>https://chenwenwenwen.github.io/2020/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+      <pubDate>Thu, 03 Sep 2020 14:24:50 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+      <description>时间格式化 格式化时间函数 // 格式化时间函数 function dateFormat(date, fmt) { let _fmt = fmt || &amp;#39;yyyy-MM-dd hh:mm:ss&amp;#39; let ret const opt = { &amp;#39;y+&amp;#39;: date.getFullYear().toString(), &amp;#39;M+&amp;#39;: (date.getMonth() + 1).toString(), &amp;#39;d+&amp;#39;: date.getDate().toString(), &amp;#39;h+&amp;#39;: date.getHours().toString(), &amp;#39;m+&amp;#39;: date.getMinutes().toString(), &amp;#39;s+&amp;#39;: date.getSeconds().toString() } for (const k in opt) { ret = new RegExp(&amp;#39;(&amp;#39; + k + &amp;#39;)&amp;#39;).exec(_fmt) if (ret) { _fmt = _fmt.replace(ret[1], (ret[1].length === 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, &amp;#39;0&amp;#39;))) } } return _fmt } // 计算YTD、最近24小时、最近7天、最近30天（太平洋时间） const formatDateFilter = { // 获取某个时间点至今  getAll() { const _date = new Date() // 初始时间  const date1 = &amp;#39;2019-12-05 16:00:00&amp;#39; // 取上线日期  // 结束时间  const date2 = dateFormat(_date) // 返回数据  return { confirmed_at_min: date1, confirmed_at_max: date2 } }, // 获取年度时间，即当年1月1号零点至今  getYTD() { const _date = new Date() // 初始时间  const Y1 = _date.</description>
+    </item>
     
     <item>
       <title>echart、导出、弹窗组件</title>

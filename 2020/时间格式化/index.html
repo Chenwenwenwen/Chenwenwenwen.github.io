@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="https://chenwenwenwen.github.io/2020/vue-8.27/" />
+  
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2020/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           时间格式化 | しずか
+       
+  </title>
+  <meta name="title" content="时间格式化 | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "时间格式化",
+    "headline" : "时间格式化",
+    "description" : "时间格式化 格式化时间函数 \/\/ 格式化时间函数 function dateFormat(date, fmt) { let _fmt = fmt || \u0026#39;yyyy-MM-dd hh:mm:ss\u0026#39; let ret const opt = { \u0026#39;y\u002b\u0026#39;: date.getFullYear().toString(), \u0026#39;M\u002b\u0026#39;: (date.getMonth() \u002b 1).toString(), \u0026#39;d\u002b\u0026#39;: date.getDate().toString(), \u0026#39;h\u002b\u0026#39;: date.getHours().toString(), \u0026#39;m\u002b\u0026#39;: date.getMinutes().toString(), \u0026#39;s\u002b\u0026#39;: date.getSeconds().toString() } for (const k in opt) { ret = new RegExp(\u0026#39;(\u0026#39; \u002b k \u002b \u0026#39;)\u0026#39;).exec(_fmt) if (ret) { _fmt = _fmt.replace(ret[1], (ret[1].length === 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, \u0026#39;0\u0026#39;))) } } return _fmt } \/\/ 计算YTD、最近24小时、最近7天、最近30天（太平洋时间） const formatDateFilter = { \/\/ 获取某个时间点至今  getAll() { const _date = new Date() \/\/ 初始时间  const date1 = \u0026#39;2019-12-05 16:00:00\u0026#39; \/\/ 取上线日期  \/\/ 结束时间  const date2 = dateFormat(_date) \/\/ 返回数据  return { confirmed_at_min: date1, confirmed_at_max: date2 } }, \/\/ 获取年度时间，即当年1月1号零点至今  getYTD() { const _date = new Date() \/\/ 初始时间  const Y1 = _date.",
+    "inLanguage" : "zh-hans",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-03 14:24:50 \u002b0800 CST",
+    "dateModified" : "2020-09-03 14:24:50 \u002b0800 CST",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2020\/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96\/",
+    "wordCount" : "373",
+    "keywords" : [ "Vue", "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">时间格式化</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-09-03 itemprop="datePublished">September 3, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="时间格式化">时间格式化</h1>
+<h3 id="格式化时间函数">格式化时间函数</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//  格式化时间函数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">date</span>, <span style="color:#a6e22e">fmt</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">_fmt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fmt</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;yyyy-MM-dd hh:mm:ss&#39;</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ret</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">opt</span> <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;y+&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>().<span style="color:#a6e22e">toString</span>(),
+    <span style="color:#e6db74">&#39;M+&#39;</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">toString</span>(),
+    <span style="color:#e6db74">&#39;d+&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>().<span style="color:#a6e22e">toString</span>(),
+    <span style="color:#e6db74">&#39;h+&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>().<span style="color:#a6e22e">toString</span>(),
+    <span style="color:#e6db74">&#39;m+&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>().<span style="color:#a6e22e">toString</span>(),
+    <span style="color:#e6db74">&#39;s+&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>().<span style="color:#a6e22e">toString</span>()
+  }
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">opt</span>) {
+    <span style="color:#a6e22e">ret</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span>).<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">_fmt</span>)
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">ret</span>) {
+      <span style="color:#a6e22e">_fmt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_fmt</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">ret</span>[<span style="color:#ae81ff">1</span>], (<span style="color:#a6e22e">ret</span>[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">?</span> (<span style="color:#a6e22e">opt</span>[<span style="color:#a6e22e">k</span>]) <span style="color:#f92672">:</span> (<span style="color:#a6e22e">opt</span>[<span style="color:#a6e22e">k</span>].<span style="color:#a6e22e">padStart</span>(<span style="color:#a6e22e">ret</span>[<span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">length</span>, <span style="color:#e6db74">&#39;0&#39;</span>)))
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">_fmt</span>
+}
+
+<span style="color:#75715e">//  计算YTD、最近24小时、最近7天、最近30天（太平洋时间）
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatDateFilter</span> <span style="color:#f92672">=</span> {
+  <span style="color:#75715e">//  获取某个时间点至今
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">getAll</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date()
+    <span style="color:#75715e">//  初始时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2019-12-05 16:00:00&#39;</span> <span style="color:#75715e">// 取上线日期
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//  结束时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">_date</span>)
+    <span style="color:#75715e">//  返回数据
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">confirmed_at_min</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date1</span>,
+      <span style="color:#a6e22e">confirmed_at_max</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date2</span>
+    }
+  },
+  <span style="color:#75715e">//  获取年度时间，即当年1月1号零点至今
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">getYTD</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date()
+    <span style="color:#75715e">//  初始时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Y1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_date</span>.<span style="color:#a6e22e">getFullYear</span>()
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">M1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;01&#39;</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">D1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;01&#39;</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">time1</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;00:00:00&#39;</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Y1</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">M1</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">D1</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">time1</span>
+    <span style="color:#75715e">//  结束时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">_date</span>)
+    <span style="color:#75715e">//  返回数据
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">confirmed_at_min</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date1</span>,
+      <span style="color:#a6e22e">confirmed_at_max</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date2</span>
+    }
+  },
+  <span style="color:#a6e22e">getLast24</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date()
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> []
+    <span style="color:#a6e22e">_date</span>.<span style="color:#a6e22e">setHours</span>(<span style="color:#a6e22e">_date</span>.<span style="color:#a6e22e">getHours</span>())<span style="color:#75715e">// 获取到当前小时
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">_date</span>))
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">23</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#a6e22e">_date</span>.<span style="color:#a6e22e">setHours</span>(<span style="color:#a6e22e">_date</span>.<span style="color:#a6e22e">getHours</span>() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)<span style="color:#75715e">// 每次循环一次 月份值减1
+</span><span style="color:#75715e"></span>      <span style="color:#75715e">// 在这里可以自定义输出的日期格式
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">_date</span>))
+    }
+    <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">reverse</span>()
+    <span style="color:#75715e">//  开始时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>[<span style="color:#ae81ff">0</span>]
+    <span style="color:#75715e">//  结束时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">date2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
+    <span style="color:#75715e">//  返回数据
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">confirmed_at_min</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date1</span>,
+      <span style="color:#a6e22e">confirmed_at_max</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date2</span>
+    }
+  },
+  <span style="color:#a6e22e">getLastNDay</span>(<span style="color:#a6e22e">_day</span>) {
+    <span style="color:#75715e">// 拼接时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_date1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date()
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_date2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date()
+
+    <span style="color:#75715e">//  当前时间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timer1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dateFormat</span>(<span style="color:#a6e22e">_date1</span>) <span style="color:#75715e">// 当前时间
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//  过去时间
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">setTime</span>(<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getTime</span>() <span style="color:#f92672">-</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">_day</span>))
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Y2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getFullYear</span>()
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">M2</span> <span style="color:#f92672">=</span> ((<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> (<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>))
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">D2</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getDate</span>() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getDate</span>() <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getDate</span>())
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hh2</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getHours</span>() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getHours</span>() <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getHours</span>())
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mm2</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getMinutes</span>() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getMinutes</span>() <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getMinutes</span>())
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ss2</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getSeconds</span>() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getSeconds</span>() <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">_date2</span>.<span style="color:#a6e22e">getSeconds</span>())
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timer2</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">Y2</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">M2</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">D2</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">hh2</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">mm2</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">ss2</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// 之前的7天或者30天
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">confirmed_at_min</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">timer2</span>,
+      <span style="color:#a6e22e">confirmed_at_max</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">timer1</span>
+    }
+  }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">formatDateFilter</span>
+}
+</code></pre></div><h3 id="用法">用法：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//引入
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">dateFormat</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@/utils/dateFormat&#39;</span>
+<span style="color:#75715e">//使用，例：往前倒7天
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">dateFormat</span>.<span style="color:#a6e22e">formatDateFilter</span>.<span style="color:#a6e22e">getLastNDay</span>(<span style="color:#ae81ff">7</span>)
+
+<span style="color:#75715e">//Moment.js时间处理库
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Moment</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;moment&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">Moment</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">confirmed_at_min</span>).<span style="color:#a6e22e">format</span>()
+</code></pre></div><p><a href="http://momentjs.cn/">Monment官网</a></p>
+
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://chenwenwenwen.github.io/2020/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/>https://chenwenwenwen.github.io/2020/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96/</span>
+            </p>
+            
+            
+
+            <h5 id="wc" class="copyright-item">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/vue/">
+                    #Vue</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://chenwenwenwen.github.io/2020/vue-8.27/" class="prev" rel="prev" title="echart、导出、弹窗组件"><i class="iconfont icon-left"></i>&nbsp;echart、导出、弹窗组件</a>
+         
+        
+    </div>
+    <br/>
+    <div class="post-comment">
+          
+
+             
+            
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'OvTg5G1h4Qi5YFdoxMN1AKdx-gzGzoHsz',
+      appKey: 'nKsq2pVzlTJ5WENA4egcakKD',
+      notify: 'false', 
+      verify: 'false', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
