@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on しずか</title>
+    <link>https://chenwenwenwen.github.io/tags/javascript/</link>
+    <description>Recent content in Javascript on しずか</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 17 Dec 2020 11:53:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://chenwenwenwen.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>异步</title>
+      <link>https://chenwenwenwen.github.io/2020/%E5%BC%82%E6%AD%A5/</link>
+      <pubDate>Thu, 17 Dec 2020 11:53:14 +0800</pubDate>
+      
+      <guid>https://chenwenwenwen.github.io/2020/%E5%BC%82%E6%AD%A5/</guid>
+      <description>异步 核心：程序当前运行部分和未来运行部分之间的关系
+1.1 分块程序 函数-最常见的块单位，所有块都共享程序作用域和状态
+当前无法完成的任务会异步完成
+最简单的方法：回调函数（不是最优也不是唯一）
+不要同步Ajax请求-&amp;gt; 阻塞所有用户交互
+引入异步-&amp;gt;创建函数并指定它在相应某个事件（定时器\ajax\鼠标事件等)后执行
+异步控制台 非js标准-&amp;gt;由宿主环境提供
+​	不同浏览器和JS环境实现不一致
+​	console.log等IO操作可能被阻塞（后台异步执行）
+​	解决：1.在JS调试器种使用断点，不要依赖控制台输出
+​	2.把对象序列化到一个字符串（JSON.stringify(..))，以强制执行一次&amp;quot;快照&amp;rdquo;
+1.2事件循环 ES6内建Promise要求对事件循环队列的调度运行能够直接进行精细控制-&amp;gt;不再只有宿主环境（通常是浏览器）管理
+JS引擎再宿主环境内运行-&amp;gt;没有时间概念（仅按需执行代码段）
+事件循环队列智能逐一执行（无抢占执行）-&amp;gt;导致setTimeout()等无法准确触发
+1.3并行线程 异步≠并行
+并行：能够同时发生
+进程和线程：多个线程能够共享单个进程得内存
+并行和顺序执行可以共存
+JS不允许跨线程共享数据 -&amp;gt; 单线程
+&amp;ldquo;进程&amp;quot;间若**不交互(互相影响)**则非确定性可接受 -&amp;gt; 执行顺序与结果无关
+不确定性（竞态条件）：函数再顺序执行级别上。
+1.4并发 单线程事件循环是并发得一种形式
+JS一次只能处理一个事件
+1.4.1非交互 &amp;ldquo;进程&amp;quot;间若**不交互(互相影响)**则非确定性可接受 -&amp;gt; 执行顺序与结果无关
+1.4.2交互 竞态协调交互-&amp;gt;确保执行顺序以避免不确定性（防止竞态）
+门闩协调交互-&amp;gt;只有第一名取胜（允许不确定性）
+1.4.3协作 并发协作是并发的一种形式
+重点不是通过共享作用域中的值进行交互
+分解长任务为多批子任务-&amp;gt;允许其他并发进程插入事件循环列中交替执行
+1.5任务 任务队列：
+​	挂载在事件循环队列中每个tick之后的队列
+​	每个tick中出现异步操作会追加到队列末尾-&amp;gt;不会添加新事件
+事件循环=末尾追加 ； 任务队列 = 插入
+任务循环可以无限循环(类似while)导致无法执行下一个事件循环tick-&amp;gt;一个任务可能引起更多任务追加到同一个队列
+任务队列更保证顺序：尽可能早的将来
+1.6语句循序 编译器语句重新排序
+​	代码的语句顺序和JS引擎执行顺序不一定一致
+​	JS引擎在编译期间执行的都是安全优化-&amp;gt;最后可见结果都是一样的
+​	可能有副作用-禁止</description>
+    </item>
+    
+  </channel>
+</rss>
