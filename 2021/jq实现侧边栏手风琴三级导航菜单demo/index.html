@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="wen">
+  
+  
+  
+  <link rel="prev" href="https://chenwenwenwen.github.io/2021/%E5%88%A9%E7%94%A8flex%E8%AE%BE%E7%BD%AE%E4%BA%86%E5%BC%B9%E6%80%A7%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E5%A2%9E%E5%A4%A7%E6%88%96%E7%BC%A9%E5%B0%8F%E4%BB%A5%E9%80%82%E5%BA%94%E5%85%B6%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%8F%AF%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4/" />
+  
+  <link rel="canonical" href="https://chenwenwenwen.github.io/2021/jq%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%89%8B%E9%A3%8E%E7%90%B4%E4%B8%89%E7%BA%A7%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95demo/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JQ实现侧边栏手风琴三级导航菜单Demo | しずか
+       
+  </title>
+  <meta name="title" content="JQ实现侧边栏手风琴三级导航菜单Demo | しずか">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/chenwenwenwen.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "JQ实现侧边栏手风琴三级导航菜单Demo",
+    "headline" : "JQ实现侧边栏手风琴三级导航菜单Demo",
+    "description" : "效果：\nhtml代码 \u0026lt;div class=\u0026#34;dz_pro_nav\u0026#34;\u0026gt; \u0026lt;div class=\u0026#34;pro_nav\u0026#34;\u0026gt; \u0026lt;ul class=\u0026#34;nav\u0026#34;\u0026gt; \u0026lt;li\u0026gt; \u0026lt;div class=\u0026#34;fristNav\u0026#34;\u0026gt; \u0026lt;a href=\u0026#34;#\u0026#34; target=\u0026#34;_blank\u0026#34; \u0026gt; \u0026lt;span class=\u0026#34;DXIcon dx-icon_year dz_nav_icon pc\u0026#34;\u0026gt;\u0026lt;\/span\u0026gt; \u0026lt;h2\u0026gt;一级菜单\u0026lt;\/h2\u0026gt; \u0026lt;\/a\u0026gt; \u0026lt;!--三角箭头--\u0026gt; \u0026lt;div class=\u0026#34;nav_triangle_1 fristNav_open\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;!-- 二级菜单 --\u0026gt; \u0026lt;ul class=\u0026#34;sub\u0026#34;\u0026gt; \u0026lt;li\u0026gt; \u0026lt;div class=\u0026#34;secoundNav\u0026#34; \u0026gt; \u0026lt;a href=\u0026#34;#\u0026#34; target=\u0026#34;_blank\u0026#34; \u0026gt; \u0026lt;div class=\u0026#34;sub-title\u0026#34;\u0026gt;二级菜单\u0026lt;\/div\u0026gt; \u0026lt;\/a\u0026gt; \u0026lt;!--三角箭头--\u0026gt; \u0026lt;div class=\u0026#34;nav_triangle_1 secoundNav_open\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;!-- 三级菜单 --\u0026gt; \u0026lt;div class=\u0026#34;thr\u0026#34;\u0026gt; \u0026lt;a class=\u0026#34;thridNav\u0026#34; href=\u0026#34;#\u0026#34; target=\u0026#34;_blank\u0026#34; \u0026gt; \u0026lt;!--三角箭头--\u0026gt; \u0026lt;div class=\u0026#34;nav_triangle_2\u0026#34;\u0026gt;\u0026lt;\/div\u0026gt; \u0026lt;div class=\u0026#34;thr_title\u0026#34;\u0026gt;三级菜单\u0026lt;\/div\u0026gt; \u0026lt;\/a\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;\/li\u0026gt; \u0026lt;\/ul\u0026gt; \u0026lt;\/li\u0026gt; \u0026lt;\/ul\u0026gt; \u0026lt;\/div\u0026gt; \u0026lt;\/div\u0026gt; CSS代码 .",
+    "inLanguage" : "zh-hans",
+    "author" : "wen",
+    "creator" : "wen",
+    "publisher": "wen",
+    "accountablePerson" : "wen",
+    "copyrightHolder" : "wen",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-01-05 15:11:16 \u002b0800 CST",
+    "dateModified" : "2021-01-05 15:11:16 \u002b0800 CST",
+    "url" : "https:\/\/chenwenwenwen.github.io\/2021\/jq%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%89%8B%E9%A3%8E%E7%90%B4%E4%B8%89%E7%BA%A7%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95demo\/",
+    "wordCount" : "345",
+    "keywords" : [ "JQ","组件", "しずか"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://chenwenwenwen.github.io/">しずか</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JQ实现侧边栏手风琴三级导航菜单Demo</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://chenwenwenwen.github.io/" rel="author">wen</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-01-05 itemprop="datePublished">January 5, 2021</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>效果：</p>
+<p><img src="/images/assets/%E6%89%8B%E9%A3%8E%E7%90%B4%E5%AF%BC%E8%88%AA%E6%95%88%E6%9E%9C%E5%9B%BE%E6%95%88%E6%9E%9C%E5%9B%BE.png" alt="手风琴导航效果图"></p>
+<h3 id="html代码">html代码</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dz_pro_nav&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pro_nav&#34;</span>&gt;
+    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav&#34;</span>&gt;
+        &lt;<span style="color:#f92672">li</span>&gt;
+        &lt;<span style="color:#f92672">div</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fristNav&#34;</span>&gt;
+          &lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> &gt;
+            &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DXIcon dx-icon_year dz_nav_icon pc&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+            &lt;<span style="color:#f92672">h2</span>&gt;一级菜单&lt;/<span style="color:#f92672">h2</span>&gt;
+          &lt;/<span style="color:#f92672">a</span>&gt;
+ 		  <span style="color:#75715e">&lt;!--三角箭头--&gt;</span>
+          &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav_triangle_1 fristNav_open&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+          <span style="color:#75715e">&lt;!-- 二级菜单 --&gt;</span>
+          &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub&#34;</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;
+                &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secoundNav&#34;</span> &gt;
+                 &lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> &gt;
+                  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub-title&#34;</span>&gt;二级菜单&lt;/<span style="color:#f92672">div</span>&gt;
+                 &lt;/<span style="color:#f92672">a</span>&gt;
+                 <span style="color:#75715e">&lt;!--三角箭头--&gt;</span>
+                 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav_triangle_1 secoundNav_open&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+                &lt;/<span style="color:#f92672">div</span>&gt;
+                <span style="color:#75715e">&lt;!-- 三级菜单 --&gt;</span>
+                &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;thr&#34;</span>&gt;
+                    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;thridNav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> &gt;
+                     <span style="color:#75715e">&lt;!--三角箭头--&gt;</span>
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav_triangle_2&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+                    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;thr_title&#34;</span>&gt;三级菜单&lt;/<span style="color:#f92672">div</span>&gt;
+                  &lt;/<span style="color:#f92672">a</span>&gt;
+                &lt;/<span style="color:#f92672">div</span>&gt;
+            &lt;/<span style="color:#f92672">li</span>&gt;
+          &lt;/<span style="color:#f92672">ul</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+    &lt;/<span style="color:#f92672">ul</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><h3 id="css代码">CSS代码</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">dz_pro_nav</span>{
+    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">190</span><span style="color:#66d9ef">px</span>;
+  }
+  .<span style="color:#a6e22e">pro_nav</span> <span style="color:#f92672">*</span>{
+    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+  }
+  .<span style="color:#a6e22e">pro_nav</span>{
+    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#ffffff</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">190</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#66d9ef">auto</span>;
+  }
+  .<span style="color:#a6e22e">pro_nav</span> .<span style="color:#a6e22e">nav</span>{
+    <span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  }
+  .<span style="color:#a6e22e">nav</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">li</span>{
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#66d9ef">auto</span>;
+    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#ffffff</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#e2e2e2</span>;
+  }
+  .<span style="color:#a6e22e">fristNav</span>{
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+    <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">flex</span><span style="color:#f92672">-</span><span style="color:#66d9ef">start</span>;
+    <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+    <span style="color:#66d9ef">text-indent</span>:<span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+    <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  }
+  .<span style="color:#a6e22e">fristNav</span> <span style="color:#f92672">a</span>{
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+    <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">flex</span><span style="color:#f92672">-</span><span style="color:#66d9ef">start</span>;
+    <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+    <span style="color:#66d9ef">text-decoration</span>:<span style="color:#66d9ef">none</span><span style="color:#960050;background-color:#1e0010">；</span>
+  }
+  .<span style="color:#a6e22e">dz_nav_icon</span>{
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#002D4E</span>;
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">18</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>;
+  }
+  .<span style="color:#a6e22e">fristNav</span> <span style="color:#f92672">h2</span>{
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">18</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">24</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#002D4E</span>;
+    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>;
+    <span style="color:#66d9ef">text-indent</span>:<span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+  }
+  .<span style="color:#a6e22e">nav_triangle_1</span>{
+    <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">0</span> ;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">7</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">border-top-color</span>: <span style="color:#ae81ff">#D2D2D2</span>;
+    <span style="color:#66d9ef">border-bottom</span>: <span style="color:#66d9ef">none</span>;
+    <span style="color:#66d9ef">border-left-color</span>: <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">border-right-color</span>: <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+    <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+  }
+  .<span style="color:#a6e22e">sub</span>{
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+  }
+  .<span style="color:#a6e22e">sub</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">li</span>{
+    <span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#66d9ef">auto</span>;
+    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+  }
+  .<span style="color:#a6e22e">secoundNav</span>{
+    <span style="color:#66d9ef">text-indent</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+    <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+  }
+  .<span style="color:#a6e22e">sub-title</span>{
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#494949</span>;
+    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+  }
+  .<span style="color:#a6e22e">sub</span> .<span style="color:#a6e22e">sub_active_title</span>{
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#1A1A1A</span>;
+    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>;
+  }
+  .<span style="color:#a6e22e">sub</span> .<span style="color:#a6e22e">sub_active</span>{
+    <span style="color:#66d9ef">text-indent</span>: <span style="color:#ae81ff">3.6</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#002D4E</span>;
+  }
+  .<span style="color:#a6e22e">thr</span>{
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+  }
+  .<span style="color:#a6e22e">thridNav</span>{
+    <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">em</span>;
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+    <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+  }
+  .<span style="color:#a6e22e">thr_title</span>{
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">14</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#929292</span>;
+    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+    <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+  }
+  .<span style="color:#a6e22e">nav_triangle_2</span>{
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+    <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span>;
+    <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">0</span> ;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">border-left-color</span>:<span style="color:#ae81ff">#ffffff</span>;
+    <span style="color:#66d9ef">border-right</span>: <span style="color:#66d9ef">none</span>;
+    <span style="color:#66d9ef">border-top-color</span>: <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">border-bottom-color</span>: <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  }
+  .<span style="color:#a6e22e">nav_triangle_2_active</span> {
+    <span style="color:#66d9ef">border-left-color</span>:  <span style="color:#ae81ff">#002D4E</span>;
+  }
+  .<span style="color:#a6e22e">thr_title_active</span>{
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#494949</span>;
+  }
+</code></pre></div><h3 id="jq代码">JQ代码</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span>() {
+      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.fristNav_open&#39;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>() {
+        <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">next</span>().<span style="color:#a6e22e">slideToggle</span>();
+      });
+      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.secoundNav_open&#39;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>() {
+          <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">next</span>().<span style="color:#a6e22e">slideToggle</span>();
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">hasClass</span>(<span style="color:#e6db74">&#39;sub_active&#39;</span>)) {
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#39;sub_active&#39;</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.sub-title&#39;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#39;sub_active_title&#39;</span>);
+          } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;sub_active&#39;</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">parent</span>().<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.sub-title&#39;</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;sub_active_title&#39;</span>);
+          }
+      });
+      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.thridNav&#39;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>() {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.nav_triangle_2&#39;</span>).<span style="color:#a6e22e">hasClass</span>(<span style="color:#e6db74">&#39;nav_triangle_2_active&#39;</span>)) {
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.nav_triangle_2&#39;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#39;nav_triangle_2_active&#39;</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.thr_title&#39;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#39;thr_title_active&#39;</span>);
+          } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.nav_triangle_2&#39;</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;nav_triangle_2_active&#39;</span>);
+            <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.thr_title&#39;</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;thr_title_active&#39;</span>);
+          }
+      });
+    })
+</code></pre></div>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wen </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://chenwenwenwen.github.io/2021/jq%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%89%8B%E9%A3%8E%E7%90%B4%E4%B8%89%E7%BA%A7%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95demo/>https://chenwenwenwen.github.io/2021/jq%E5%AE%9E%E7%8E%B0%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%89%8B%E9%A3%8E%E7%90%B4%E4%B8%89%E7%BA%A7%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95demo/</span>
+            </p>
+            
+            
+
+            <h5 id="wc" class="copyright-item">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/jq/">
+                    #JQ</a></span>
+            
+            <span class="tag"><a href="https://chenwenwenwen.github.io/tags/%E7%BB%84%E4%BB%B6/">
+                    #组件</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://chenwenwenwen.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://chenwenwenwen.github.io/2021/%E5%88%A9%E7%94%A8flex%E8%AE%BE%E7%BD%AE%E4%BA%86%E5%BC%B9%E6%80%A7%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E5%A2%9E%E5%A4%A7%E6%88%96%E7%BC%A9%E5%B0%8F%E4%BB%A5%E9%80%82%E5%BA%94%E5%85%B6%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%8F%AF%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4/" class="prev" rel="prev" title="利用flex设置了弹性项目如何增大或缩小以适应其弹性容器中可用的空间"><i class="iconfont icon-left"></i>&nbsp;利用flex设置了弹性项目如何增大或缩小以适应其弹性容器中可用的空间</a>
+         
+        
+    </div>
+    <br/>
+    <div class="post-comment">
+          
+
+             
+            
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'OvTg5G1h4Qi5YFdoxMN1AKdx-gzGzoHsz',
+      appKey: 'nKsq2pVzlTJ5WENA4egcakKD',
+      notify: 'false', 
+      verify: 'false', 
+      avatar:'mm', 
+      placeholder: '说点什么吧...',
+      visitor: 'true'
+  });
+</script>
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://chenwenwenwen.github.io/">wen</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+        
+      </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
